@@ -1,39 +1,40 @@
 name,full_name,tier1,tier,event_type,month,day,year_offset,url,notes,notes_file,acceptance_rate
-SC,SC (Supercomputing),true,top,conference,11,15,0,https://sc26.supercomputing.org,,,~18%
-SC,SC (Supercomputing),true,top,deadline,4,8,0,https://sc26.supercomputing.org,,,~18%
-IPDPS,IEEE International Parallel and Distributed Processing Symposium,true,top,conference,5,25,0,https://www.ipdps.org,,,~23%
-IPDPS,IEEE International Parallel and Distributed Processing Symposium,true,top,deadline,10,9,-1,https://www.ipdps.org,,,~23%
-PPoPP,Principles and Practice of Parallel Programming,true,top,conference,1,25,0,https://ppopp26.sigplan.org,,,~21%
-PPoPP,Principles and Practice of Parallel Programming,true,top,deadline,9,1,-1,https://ppopp26.sigplan.org,,,~21%
-ASPLOS,ACM International Conference on Architectural Support for Programming Languages and Operating Systems,true,top,conference,4,5,0,https://asplos-conference.org,Approximate dates; verify for current year,notes/ASPLOS.md,~19%
-ASPLOS,ACM International Conference on Architectural Support for Programming Languages and Operating Systems,true,top,deadline,11,1,-1,https://asplos-conference.org,Approximate dates; verify for current year,notes/ASPLOS.md,~19%
-HPCA,IEEE International Symposium on High Performance Computer Architecture,true,top,conference,3,7,0,https://hpca-conf.org,Approximate dates; verify for current year,notes/HPCA.md,~20%
-HPCA,IEEE International Symposium on High Performance Computer Architecture,true,top,deadline,8,9,-1,https://hpca-conf.org,Approximate dates; verify for current year,notes/HPCA.md,~20%
-TACO,ACM Transactions on Architecture and Code Optimization,true,top,conference,10,18,0,https://taco.acm.org,Rolling review journal presented at MICRO; conference date is approximate MICRO date,notes/TACO.md,~30%
-TACO,ACM Transactions on Architecture and Code Optimization,true,top,deadline,7,1,0,https://taco.acm.org,Approximate soft deadline for MICRO presentation; rolling review,notes/TACO.md,~30%
-HPDC,International Symposium on High-Performance Parallel and Distributed Computing,true,regular,conference,7,15,0,https://hpdc.sci.utah.edu/2026/,,notes/HPDC.md,~25%
-HPDC,International Symposium on High-Performance Parallel and Distributed Computing,true,regular,deadline,2,5,0,https://hpdc.sci.utah.edu/2026/,,notes/HPDC.md,~25%
-ICS,International Conference on Supercomputing,true,regular,conference,7,15,0,https://dipsa-qub.github.io/ICS2026-webpage/,2 submission cycles,notes/ICS.md,~26%
-ICS,International Conference on Supercomputing,true,regular,deadline,12,16,-1,https://dipsa-qub.github.io/ICS2026-webpage/,Cycle 1,notes/ICS.md,~26%
-ICS,International Conference on Supercomputing,true,regular,deadline,2,9,0,https://dipsa-qub.github.io/ICS2026-webpage/,Cycle 2,notes/ICS.md,~26%
-ICDCS,International Conference on Distributed Computing Systems,true,regular,conference,6,15,0,https://icdcs2026.icdcs.org/,,notes/ICDCS.md,~18%
-ICDCS,International Conference on Distributed Computing Systems,true,regular,deadline,1,21,0,https://icdcs2026.icdcs.org/,,notes/ICDCS.md,~18%
-USENIX ATC,USENIX Annual Technical Conference,true,regular,conference,7,14,0,https://www.usenix.org/conference/atc26,Approximate dates; verify for current year,notes/USENIX_ATC.md,~18%
-USENIX ATC,USENIX Annual Technical Conference,true,regular,deadline,1,15,0,https://www.usenix.org/conference/atc26,Approximate dates; verify for current year,notes/USENIX_ATC.md,~18%
-SigMetrics,ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems,true,regular,conference,6,9,0,https://www.sigmetrics.org/sigmetrics2026/,Approximate dates; verify for current year,notes/SigMetrics.md,~15%
-SigMetrics,ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems,true,regular,deadline,10,15,-1,https://www.sigmetrics.org/sigmetrics2026/,Approximate dates; verify for current year,notes/SigMetrics.md,~15%
-SIGMOD,ACM Special Interest Group on Management of Data,false,regular,conference,6,15,0,https://2026.sigmod.org,Not HPC-focused; kept for cross-domain tracking,notes/SIGMOD.md,~20%
-SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,10,17,-1,https://2026.sigmod.org,Round 1,notes/SIGMOD.md,~20%
-SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,1,17,0,https://2026.sigmod.org,Round 2,notes/SIGMOD.md,~20%
-SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,4,17,0,https://2026.sigmod.org,Round 3,notes/SIGMOD.md,~20%
-VLDB,International Conference on Very Large Databases,false,regular,conference,9,5,0,https://www.vldb.org,Database-focused,notes/VLDB.md,~20%
-VLDB,International Conference on Very Large Databases,false,regular,deadline,3,1,0,https://www.vldb.org,Rolling monthly deadlines; final March 1,notes/VLDB.md,~20%
-MSST,International Conference on Massive Storage Systems and Technology,false,regular,conference,6,5,0,https://www.msstconference.org/,Storage-focused,notes/MSST.md,
-MSST,International Conference on Massive Storage Systems and Technology,false,regular,deadline,4,4,0,https://www.msstconference.org/,,notes/MSST.md,
-ICPP,International Conference on Parallel Processing,false,regular,conference,9,28,0,https://icpp2026.github.io/,,notes/ICPP.md,~25%
-ICPP,International Conference on Parallel Processing,false,regular,deadline,5,1,0,https://icpp2026.github.io/,,notes/ICPP.md,~25%
-ICDE,IEEE International Conference on Data Engineering,false,regular,conference,5,5,0,https://icde2026.github.io/,2 submission rounds,notes/ICDE.md,~20%
-ICDE,IEEE International Conference on Data Engineering,false,regular,deadline,6,18,-1,https://icde2026.github.io/,Round 1,notes/ICDE.md,~20%
-ICDE,IEEE International Conference on Data Engineering,false,regular,deadline,10,27,-1,https://icde2026.github.io/,Round 2,notes/ICDE.md,~20%
-DRBSD,International Workshop on Data Analysis and Reduction for Big Scientific Data,false,workshop,conference,11,15,0,https://drbsd.github.io/,Supercomputing workshop,notes/DRBSD.md,
-DRBSD,International Workshop on Data Analysis and Reduction for Big Scientific Data,false,workshop,deadline,8,15,0,https://drbsd.github.io/,,notes/DRBSD.md,
+SC,SC (Supercomputing),true,top,conference,11,15,0,https://sc26.supercomputing.org,,,N/A
+SC,SC (Supercomputing),true,top,deadline,4,8,0,https://sc26.supercomputing.org,,,N/A
+IPDPS,IEEE International Parallel and Distributed Processing Symposium,true,top,conference,5,25,0,https://www.ipdps.org,,,N/A
+IPDPS,IEEE International Parallel and Distributed Processing Symposium,true,top,deadline,10,9,-1,https://www.ipdps.org,,,N/A
+PPoPP,Principles and Practice of Parallel Programming,true,top,conference,1,25,0,https://ppopp26.sigplan.org,,,N/A
+PPoPP,Principles and Practice of Parallel Programming,true,top,deadline,9,1,-1,https://ppopp26.sigplan.org,,,N/A
+ASPLOS,ACM International Conference on Architectural Support for Programming Languages and Operating Systems,true,top,conference,4,11,0,https://www.asplos-conference.org/,,notes/ASPLOS.md,N/A
+ASPLOS,ACM International Conference on Architectural Support for Programming Languages and Operating Systems,true,top,deadline,4,15,-1,https://www.asplos-conference.org/,April cycle,notes/ASPLOS.md,N/A
+ASPLOS,ACM International Conference on Architectural Support for Programming Languages and Operating Systems,true,top,deadline,9,9,-1,https://www.asplos-conference.org/,Sep cycle,notes/ASPLOS.md,N/A
+HPCA,IEEE International Symposium on High Performance Computer Architecture,true,top,conference,3,7,0,https://hpca-conf.org,Approximate dates; verify for current year,notes/HPCA.md,N/A
+HPCA,IEEE International Symposium on High Performance Computer Architecture,true,top,deadline,8,9,-1,https://hpca-conf.org,Approximate dates; verify for current year,notes/HPCA.md,N/A
+TACO,ACM Transactions on Architecture and Code Optimization,true,top,conference,10,18,0,https://taco.acm.org,Rolling review journal presented at MICRO; conference date is approximate MICRO date,notes/TACO.md,N/A
+TACO,ACM Transactions on Architecture and Code Optimization,true,top,deadline,7,1,0,https://taco.acm.org,Approximate soft deadline for MICRO presentation; rolling review,notes/TACO.md,N/A
+HPDC,International Symposium on High-Performance Parallel and Distributed Computing,true,regular,conference,7,15,0,https://hpdc.sci.utah.edu/2026/,,notes/HPDC.md,N/A
+HPDC,International Symposium on High-Performance Parallel and Distributed Computing,true,regular,deadline,2,5,0,https://hpdc.sci.utah.edu/2026/,,notes/HPDC.md,N/A
+ICS,International Conference on Supercomputing,true,regular,conference,7,15,0,https://dipsa-qub.github.io/ICS2026-webpage/,2 submission cycles,notes/ICS.md,N/A
+ICS,International Conference on Supercomputing,true,regular,deadline,12,16,-1,https://dipsa-qub.github.io/ICS2026-webpage/,Cycle 1,notes/ICS.md,N/A
+ICS,International Conference on Supercomputing,true,regular,deadline,2,9,0,https://dipsa-qub.github.io/ICS2026-webpage/,Cycle 2,notes/ICS.md,N/A
+ICDCS,International Conference on Distributed Computing Systems,true,regular,conference,6,15,0,https://icdcs2026.icdcs.org/,,notes/ICDCS.md,N/A
+ICDCS,International Conference on Distributed Computing Systems,true,regular,deadline,1,21,0,https://icdcs2026.icdcs.org/,,notes/ICDCS.md,N/A
+USENIX ATC,USENIX Annual Technical Conference,true,regular,conference,7,14,0,https://www.usenix.org/conference/atc26,Approximate dates; verify for current year,notes/USENIX_ATC.md,N/A
+USENIX ATC,USENIX Annual Technical Conference,true,regular,deadline,1,15,0,https://www.usenix.org/conference/atc26,Approximate dates; verify for current year,notes/USENIX_ATC.md,N/A
+SigMetrics,ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems,true,regular,conference,6,9,0,https://www.sigmetrics.org/sigmetrics2026/,Approximate dates; verify for current year,notes/SigMetrics.md,N/A
+SigMetrics,ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems,true,regular,deadline,10,15,-1,https://www.sigmetrics.org/sigmetrics2026/,Approximate dates; verify for current year,notes/SigMetrics.md,N/A
+SIGMOD,ACM Special Interest Group on Management of Data,false,regular,conference,6,15,0,https://2026.sigmod.org,Not HPC-focused; kept for cross-domain tracking,notes/SIGMOD.md,N/A
+SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,10,17,-1,https://2026.sigmod.org,Round 1,notes/SIGMOD.md,N/A
+SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,1,17,0,https://2026.sigmod.org,Round 2,notes/SIGMOD.md,N/A
+SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,4,17,0,https://2026.sigmod.org,Round 3,notes/SIGMOD.md,N/A
+VLDB,International Conference on Very Large Databases,false,regular,conference,9,5,0,https://www.vldb.org,Database-focused,notes/VLDB.md,N/A
+VLDB,International Conference on Very Large Databases,false,regular,deadline,3,1,0,https://www.vldb.org,Rolling monthly deadlines; final March 1,notes/VLDB.md,N/A
+MSST,International Conference on Massive Storage Systems and Technology,false,regular,conference,6,5,0,https://www.msstconference.org/,Storage-focused,notes/MSST.md,N/A
+MSST,International Conference on Massive Storage Systems and Technology,false,regular,deadline,4,4,0,https://www.msstconference.org/,,notes/MSST.md,N/A
+ICPP,International Conference on Parallel Processing,false,regular,conference,9,28,0,https://icpp2026.github.io/,,notes/ICPP.md,N/A
+ICPP,International Conference on Parallel Processing,false,regular,deadline,5,1,0,https://icpp2026.github.io/,,notes/ICPP.md,N/A
+ICDE,IEEE International Conference on Data Engineering,false,regular,conference,5,5,0,https://icde2026.github.io/,2 submission rounds,notes/ICDE.md,N/A
+ICDE,IEEE International Conference on Data Engineering,false,regular,deadline,6,18,-1,https://icde2026.github.io/,Round 1,notes/ICDE.md,N/A
+ICDE,IEEE International Conference on Data Engineering,false,regular,deadline,10,27,-1,https://icde2026.github.io/,Round 2,notes/ICDE.md,N/A
+DRBSD,International Workshop on Data Analysis and Reduction for Big Scientific Data,false,workshop,conference,11,15,0,https://drbsd.github.io/,Supercomputing workshop,notes/DRBSD.md,N/A
+DRBSD,International Workshop on Data Analysis and Reduction for Big Scientific Data,false,workshop,deadline,8,15,0,https://drbsd.github.io/,,notes/DRBSD.md,N/A

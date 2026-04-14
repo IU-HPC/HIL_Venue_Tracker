@@ -116,17 +116,17 @@ All conference data lives in [`conferences.csv`](conferences.csv). Each row repr
 
 | Venue | Tier | Acceptance |
 |-------|------|-----------|
-| SC | Top | ~18% |
-| IPDPS | Top | ~23% |
-| PPoPP | Top | ~21% |
-| ASPLOS | Top | ~19% |
-| HPCA | Top | ~20% |
-| TACO | Top | ~30% (rolling review; presented at MICRO) |
-| HPDC | Regular | ~25% |
-| ICS | Regular | ~26% |
-| ICDCS | Regular | ~18% |
-| USENIX ATC | Regular | ~18% |
-| SigMetrics | Regular | ~15% |
+| SC | Top | N/A |
+| IPDPS | Top | N/A |
+| PPoPP | Top | N/A |
+| ASPLOS | Top | N/A |
+| HPCA | Top | N/A |
+| TACO | Top | N/A (rolling review; presented at MICRO) |
+| HPDC | Regular | N/A |
+| ICS | Regular | N/A |
+| ICDCS | Regular | N/A |
+| USENIX ATC | Regular | N/A |
+| SigMetrics | Regular | N/A |
 
 **Non-tier-1 — tracked but hidden by default (`--show-all` to display)**
 
