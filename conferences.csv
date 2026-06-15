@@ -24,9 +24,10 @@ USENIX ATC,USENIX Annual Technical Conference,true,regular,deadline,1,15,0,https
 SigMetrics,ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems,true,regular,conference,6,9,0,https://www.sigmetrics.org/sigmetrics2026/,Approximate dates; verify for current year,notes/SigMetrics.md,N/A
 SigMetrics,ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems,true,regular,deadline,10,15,-1,https://www.sigmetrics.org/sigmetrics2026/,Approximate dates; verify for current year,notes/SigMetrics.md,N/A
 SIGMOD,ACM Special Interest Group on Management of Data,false,regular,conference,6,15,0,https://2026.sigmod.org,Not HPC-focused; kept for cross-domain tracking,notes/SIGMOD.md,N/A
-SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,10,17,-1,https://2026.sigmod.org,Round 1,notes/SIGMOD.md,N/A
-SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,1,17,0,https://2026.sigmod.org,Round 2,notes/SIGMOD.md,N/A
-SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,4,17,0,https://2026.sigmod.org,Round 3,notes/SIGMOD.md,N/A
+SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,1,17,-1,https://2026.sigmod.org,Round 1,notes/SIGMOD.md,N/A
+SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,4,17,-1,https://2026.sigmod.org,Round 2,notes/SIGMOD.md,N/A
+SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,7,17,-1,https://2026.sigmod.org,Round 3,notes/SIGMOD.md,N/A
+SIGMOD,ACM Special Interest Group on Management of Data,false,regular,deadline,10,17,-1,https://2026.sigmod.org,Round 4,notes/SIGMOD.md,N/A
 VLDB,International Conference on Very Large Databases,false,regular,conference,9,5,0,https://www.vldb.org,Database-focused,notes/VLDB.md,N/A
 VLDB,International Conference on Very Large Databases,false,regular,deadline,3,1,0,https://www.vldb.org,Rolling monthly deadlines; final March 1,notes/VLDB.md,N/A
 MSST,International Conference on Massive Storage Systems and Technology,false,regular,conference,6,5,0,https://www.msstconference.org/,Storage-focused,notes/MSST.md,N/A
@@ -38,3 +39,6 @@ ICDE,IEEE International Conference on Data Engineering,false,regular,deadline,6,
 ICDE,IEEE International Conference on Data Engineering,false,regular,deadline,10,27,-1,https://icde2026.github.io/,Round 2,notes/ICDE.md,N/A
 DRBSD,International Workshop on Data Analysis and Reduction for Big Scientific Data,false,workshop,conference,11,15,0,https://drbsd.github.io/,Supercomputing workshop,notes/DRBSD.md,N/A
 DRBSD,International Workshop on Data Analysis and Reduction for Big Scientific Data,false,workshop,deadline,8,15,0,https://drbsd.github.io/,,notes/DRBSD.md,N/A
+PASC,Platform for Advanced Scientific Computing Conference,true,regular,conference,6,29,0,https://pasc-conference.org/editions/pasc26/,,notes/PASC.md,N/A
+PASC,Platform for Advanced Scientific Computing Conference,true,regular,deadline,12,12,-1,https://pasc-conference.org/editions/pasc26/,Abstract,notes/PASC.md,N/A
+PASC,Platform for Advanced Scientific Computing Conference,true,regular,deadline,2,4,0,https://pasc-conference.org/editions/pasc26/,Full paper,notes/PASC.md,N/A

@@ -288,4 +288,40 @@ DESCRIPTION:ACM SIGMETRICS International Conference on Measurement and Mode
  ling of Computer Systems.
 URL:https://www.sigmetrics.org/sigmetrics2026/
 END:VEVENT
+BEGIN:VEVENT
+UID:PASC-deadline-20261212@hil-venue-tracker
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:PASC Paper Deadline (Abstract)
+DESCRIPTION:Platform for Advanced Scientific Computing Conference submissio
+ n deadline. (Abstract)
+URL:https://pasc-conference.org/editions/pasc26/
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: PASC Paper Deadline (Abstract)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:PASC-deadline-20270204@hil-venue-tracker
+DTSTART;VALUE=DATE:20270204
+DTEND;VALUE=DATE:20270205
+SUMMARY:PASC Paper Deadline (Full paper)
+DESCRIPTION:Platform for Advanced Scientific Computing Conference submissio
+ n deadline. (Full paper)
+URL:https://pasc-conference.org/editions/pasc26/
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: PASC Paper Deadline (Full paper)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:PASC-conference-20270629@hil-venue-tracker
+DTSTART;VALUE=DATE:20270629
+DTEND;VALUE=DATE:20270630
+SUMMARY:PASC Conference
+DESCRIPTION:Platform for Advanced Scientific Computing Conference.
+URL:https://pasc-conference.org/editions/pasc26/
+END:VEVENT
 END:VCALENDAR

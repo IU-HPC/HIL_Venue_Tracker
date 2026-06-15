@@ -19,6 +19,11 @@ IEEE/ACM International Conference for High Performance Computing, Networking, St
 - Papers go through a rigorous double-blind review process.
 - Author rebuttals are included in the process.
 
+### Recent cycle observations (lab notes)
+
+- **2025 cycle:** Reviews read more positively than the eventual outcomes — many authors expected acceptance after reading their reviews and were ultimately rejected. Treat encouraging-sounding reviews with caution.
+- **2026 cycle:** In apparent response, reviews are noticeably harsher and less directly positive, so the rebuttal/review tone is a poorer predictor of the final decision. Submission volume also rose sharply this year, raising competition. Plan for a tougher bar and don't read too much into review sentiment.
+
 ## Misc Notes
 
 - **SIGHPC Travel Grants:** Application window is roughly early August to early September. Worth applying for students.

@@ -127,6 +127,7 @@ All conference data lives in [`conferences.csv`](conferences.csv). Each row repr
 | ICDCS | Regular | N/A |
 | USENIX ATC | Regular | N/A |
 | SigMetrics | Regular | N/A |
+| PASC | Regular | N/A |
 
 **Non-tier-1 — tracked but hidden by default (`--show-all` to display)**
 
