@@ -1,7 +1,7 @@
 # MSST — International Conference on Massive Storage Systems and Technology
 
 **Website:** [msstconference.org](https://www.msstconference.org/)
-**Tier:** Regular | **Tier-1:** No (storage-focused)
+**Lab scope:** Adjacent | **Venue type:** Conference
 
 ## Overview
 

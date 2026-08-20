@@ -1,7 +1,7 @@
 # SIGMOD — ACM Special Interest Group on Management of Data
 
 **Website:** [2026.sigmod.org](https://2026.sigmod.org)
-**Tier:** Regular | **Tier-1:** No (not HPC-focused; kept for cross-domain tracking)
+**Lab scope:** Adjacent | **Venue type:** Conference
 
 ## Overview
 

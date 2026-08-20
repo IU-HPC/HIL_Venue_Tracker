@@ -1,158 +1,127 @@
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-import matplotlib.dates as mdates
-import datetime as dt
-import csv
+"""Generate a visual timeline of lab-relevant venue deadlines and dates."""
+
 import argparse
+import datetime as dt
+
+import matplotlib.dates as mdates
+import matplotlib.patches as mpatches
+import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-BASE_YEAR = 2027
+from venue_data import VALID_SCOPES, date_span, load_venues
 
-TIER_COLORS = {
-    'top':      '#c0392b',  # dark red
-    'regular':  '#2980b9',  # blue
-    'workshop': '#7f8c8d',  # gray
+
+SCOPE_COLORS = {
+    'core': '#2471a3',
+    'adjacent': '#b9770e',
+    'watch': '#7f8c8d',
 }
 
-NON_TIER1_ALPHA = 0.28
+
+def venue_label(venue):
+    """Build a compact axis label with independent external rank signals."""
+    signals = []
+    if venue.get('ccf_rank'):
+        signals.append(f'CCF {venue["ccf_rank"]}')
+    if venue.get('icore_rank'):
+        signals.append(f'ICORE {venue["icore_rank"]}')
+    if not signals:
+        signals.append('no external rank')
+    return f'{venue["name"]}  [{" · ".join(signals)}]'
 
 
-def load_conferences(csv_path, tier1_only=True):
-    conferences = {}
-    with open(csv_path, newline='') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            name = row['name']
-            is_tier1 = row['tier1'].strip().lower() == 'true'
-            if tier1_only and not is_tier1:
-                continue
-            if name not in conferences:
-                conferences[name] = {
-                    'name': name,
-                    'full_name': row.get('full_name', name),
-                    'tier': row['tier'],
-                    'tier1': is_tier1,
-                    'deadlines': [],
-                    'conference': None,
-                    'url': row.get('url', ''),
-                    'notes': row.get('notes', ''),
-                    'notes_file': row.get('notes_file', ''),
-                    'acceptance_rate': row.get('acceptance_rate', ''),
-                }
-            year = BASE_YEAR + int(row['year_offset'])
-            date = dt.date(year, int(row['month']), int(row['day']))
-            if row['event_type'] == 'conference':
-                conferences[name]['conference'] = date
-            else:
-                conferences[name]['deadlines'].append({
-                    'date': date,
-                    'notes': row.get('notes', '').strip(),
-                })
-    return list(conferences.values())
+def plot_timeline(venues, output_path='conference_timeline.png', scope='core', show=True):
+    venues = [venue for venue in venues if venue['conference'] is not None]
+    venues.sort(
+        key=lambda venue: min(
+            (deadline['date'] for deadline in venue['deadlines']),
+            default=venue['conference'],
+        )
+    )
+    if not venues:
+        raise ValueError(f'No scheduled conference events found for scope "{scope}".')
 
+    first_date, last_date = date_span(venues)
+    span_start = dt.date(first_date.year, 1, 1)
+    span_end = dt.date(last_date.year, 12, 31)
+    n = len(venues)
+    fig, ax = plt.subplots(figsize=(18, max(6, n * 0.65 + 2)))
 
-def plot_timeline(conferences, output_path='conference_timeline.png', show_all=False, show=True):
-    conferences = [c for c in conferences if c['conference'] is not None]
-    conferences.sort(key=lambda c: min(d['date'] for d in c['deadlines']) if c['deadlines'] else c['conference'])
-    n = len(conferences)
+    for year in range(span_start.year + 1, span_end.year + 1):
+        ax.axvline(dt.date(year, 1, 1), color='#555', linewidth=1.2,
+                   linestyle='--', alpha=0.35, zorder=1)
 
-    fig, ax = plt.subplots(figsize=(18, max(6, n * 0.6 + 2)))
+    for i, venue in enumerate(venues):
+        color = SCOPE_COLORS[venue['lab_scope']]
+        deadlines = sorted(venue['deadlines'], key=lambda item: item['date'])
+        conference = venue['conference']
 
-    span_start = dt.date(BASE_YEAR - 1, 1, 1)
-    year_boundary = dt.date(BASE_YEAR, 1, 1)
-    span_end = dt.date(BASE_YEAR, 12, 31)
-
-    # Shade the pre-year
-    ax.axvspan(span_start, year_boundary, alpha=0.07, color='#e67e22', zorder=0)
-
-    # Year boundary
-    ax.axvline(year_boundary, color='#555', linewidth=1.5, linestyle='--', alpha=0.6, zorder=1)
-
-    # Year labels at top
-    ax.text(dt.date(BASE_YEAR - 1, 7, 1), n + 0.1, f'{BASE_YEAR - 1}  (pre-year)',
-            ha='center', va='bottom', fontsize=11, color='#7d6608', alpha=0.8)
-    ax.text(dt.date(BASE_YEAR, 7, 1), n + 0.1, f'{BASE_YEAR}  (main year)',
-            ha='center', va='bottom', fontsize=11, color='#333', alpha=0.8)
-
-    for i, conf in enumerate(conferences):
-        color = TIER_COLORS[conf['tier']]
-        alpha = 1.0 if conf['tier1'] else NON_TIER1_ALPHA
-        deadlines = sorted(conf['deadlines'], key=lambda d: d['date'])
-        conf_date = conf['conference']
-
-        # Span line from earliest deadline to conference date
         if deadlines:
-            ax.hlines(i, deadlines[0]['date'], conf_date, colors=color, linewidth=2.5,
-                      alpha=0.3 * alpha, zorder=2)
+            ax.hlines(i, deadlines[0]['date'], venue['conference_end'], colors=color,
+                      linewidth=2.5, alpha=0.28, zorder=2)
 
-        # Deadline markers + date label above + short note below
-        for dl in deadlines:
-            date  = dl['date']
-            note  = dl['notes']
-            ax.scatter(date, i, color=color, marker='D', s=65, zorder=4,
-                       edgecolors='white', linewidths=0.5, alpha=alpha)
-            ax.text(date, i + 0.22, date.strftime('%-m/%-d'),
-                    ha='center', va='bottom', fontsize=6.5, color=color, zorder=5,
-                    alpha=alpha)
-            if note and len(note) <= 14:
-                ax.text(date, i - 0.22, note,
-                        ha='center', va='top', fontsize=5.5, color=color, zorder=5,
-                        alpha=alpha * 0.85, style='italic')
+        for deadline in deadlines:
+            expected = deadline['status'] != 'confirmed'
+            ax.scatter(
+                deadline['date'], i, marker='D', s=65, zorder=4,
+                facecolors='white' if expected else color,
+                edgecolors=color, linewidths=1.4 if expected else 0.5,
+            )
+            ax.text(deadline['date'], i + 0.22,
+                    deadline['date'].strftime('%-m/%-d'),
+                    ha='center', va='bottom', fontsize=6.5, color=color, zorder=5)
+            note = deadline.get('notes', '')
+            short_note = note.split(';', 1)[0]
+            if short_note and len(short_note) <= 18:
+                ax.text(deadline['date'], i - 0.22, short_note,
+                        ha='center', va='top', fontsize=5.5, color=color,
+                        zorder=5, alpha=0.85, style='italic')
 
-        # Conference marker
-        ax.scatter(conf_date, i, color=color, marker='*', s=280, zorder=4,
-                   edgecolors='white', linewidths=0.5, alpha=alpha)
+        conference_event = venue['conference_event']
+        expected = conference_event['status'] != 'confirmed'
+        ax.scatter(
+            conference, i, marker='*', s=280, zorder=4,
+            facecolors='white' if expected else color,
+            edgecolors=color, linewidths=1.5 if expected else 0.5,
+        )
 
-    # Y axis — bold labels for tier-1, normal for others
     ax.set_yticks(range(n))
-    labels = ax.set_yticklabels([c['name'] for c in conferences], fontsize=10)
-    for label, conf in zip(labels, conferences):
-        label.set_alpha(1.0 if conf['tier1'] else NON_TIER1_ALPHA + 0.1)
-
+    ax.set_yticklabels([venue_label(venue) for venue in venues], fontsize=9)
     ax.set_ylim(-0.6, n + 0.2)
-
-    # X axis: every month
     ax.set_xlim(span_start, span_end)
     ax.xaxis.set_major_locator(mdates.MonthLocator())
-    ax.xaxis.set_major_formatter(mdates.DateFormatter('%b'))
-    plt.setp(ax.xaxis.get_majorticklabels(), rotation=45, ha='right', fontsize=9)
-
-    # Vertical grid lines at each month
+    ax.xaxis.set_major_formatter(mdates.DateFormatter('%b\n%Y'))
+    plt.setp(ax.xaxis.get_majorticklabels(), ha='center', fontsize=8)
     ax.xaxis.grid(True, alpha=0.2, linestyle=':')
     ax.yaxis.grid(False)
     ax.set_axisbelow(True)
 
-    # Today marker
     today = dt.date.today()
     if span_start <= today <= span_end:
-        ax.axvline(today, color='green', linewidth=1.2, linestyle=':', alpha=0.8, zorder=3)
+        ax.axvline(today, color='green', linewidth=1.2, linestyle=':',
+                   alpha=0.8, zorder=3)
         ax.text(today, -0.55, 'today', ha='center', va='top', fontsize=7,
                 color='green', alpha=0.9)
 
-    # Legend
-    legend_elements = [
-        mpatches.Patch(color=TIER_COLORS['top'],      label='Top Conference'),
-        mpatches.Patch(color=TIER_COLORS['regular'],  label='Regular Conference'),
-        mpatches.Patch(color=TIER_COLORS['workshop'], label='Workshop'),
-        Line2D([0], [0], marker='D', color='w', markerfacecolor='#555',
-               label='Paper Deadline', markersize=8),
-        Line2D([0], [0], marker='*', color='w', markerfacecolor='#555',
-               label='Conference Date', markersize=12),
+    legend = [
+        mpatches.Patch(color=color, label=f'{name.title()} lab scope')
+        for name, color in SCOPE_COLORS.items()
+        if scope == 'all' or name == scope
     ]
-    if show_all:
-        legend_elements.append(
-            mpatches.Patch(color='#aaa', alpha=NON_TIER1_ALPHA + 0.1, label='Non-Tier-1 (faded)')
-        )
-    ax.legend(handles=legend_elements, loc='upper left', fontsize=8,
+    legend += [
+        Line2D([0], [0], marker='D', color='w', markerfacecolor='#555',
+               label='Paper deadline', markersize=8),
+        Line2D([0], [0], marker='D', color='#555', markerfacecolor='white',
+               label='Expected / unverified date', markersize=7, linestyle='None'),
+        Line2D([0], [0], marker='*', color='w', markerfacecolor='#555',
+               label='Venue start date', markersize=12),
+    ]
+    ax.legend(handles=legend, loc='upper left', fontsize=8,
               framealpha=0.9, edgecolor='#ccc')
-
-    title_suffix = '  [all venues]' if show_all else '  [tier-1 only]'
-    ax.set_title(
-        f'Conference Submission & Event Timeline  ({BASE_YEAR - 1}–{BASE_YEAR}){title_suffix}',
-        fontsize=13, fontweight='bold', pad=12)
+    ax.set_title(f'HIL Venue Submission & Event Timeline  [{scope} scope]',
+                 fontsize=13, fontweight='bold', pad=12)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
-
     plt.tight_layout()
     plt.savefig(output_path, dpi=150, bbox_inches='tight')
     print(f'Saved to {output_path}')
@@ -162,21 +131,20 @@ def plot_timeline(conferences, output_path='conference_timeline.png', show_all=F
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Generate a conference submission and event timeline.')
-    parser.add_argument(
-        '--show-all', action='store_true',
-        help='Include non-tier-1 venues (shown faded). Default: tier-1 only.')
-    parser.add_argument(
-        '--csv', default='conferences.csv',
-        help='Path to the conferences CSV (default: conferences.csv).')
-    parser.add_argument(
-        '--output', default='conference_timeline.png',
-        help='Output image path (default: conference_timeline.png).')
-    parser.add_argument(
-        '--no-show', action='store_true',
-        help='Save the image without opening a viewer (useful for CI/headless use).')
+        description='Generate the HIL venue submission and event timeline.')
+    parser.add_argument('--scope', choices=(*VALID_SCOPES, 'all'), default='core',
+                        help='Lab scope to include (default: core).')
+    parser.add_argument('--show-all', action='store_true',
+                        help='Compatibility alias for --scope all.')
+    parser.add_argument('--venues', default='venues.csv',
+                        help='Stable venue metadata CSV (default: venues.csv).')
+    parser.add_argument('--events', default='events.csv',
+                        help='Edition event CSV (default: events.csv).')
+    parser.add_argument('--output', default='conference_timeline.png')
+    parser.add_argument('--no-show', action='store_true')
     args = parser.parse_args()
 
-    confs = load_conferences(args.csv, tier1_only=not args.show_all)
-    plot_timeline(confs, output_path=args.output, show_all=args.show_all,
+    chosen_scope = 'all' if args.show_all else args.scope
+    loaded = load_venues(args.venues, args.events, scope=chosen_scope)
+    plot_timeline(loaded, output_path=args.output, scope=chosen_scope,
                   show=not args.no_show)

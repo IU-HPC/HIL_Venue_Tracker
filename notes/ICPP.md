@@ -1,11 +1,11 @@
 # ICPP — International Conference on Parallel Processing
 
 **Website:** [icpp2026.github.io](https://icpp2026.github.io/)
-**Tier:** Regular | **Tier-1:** No
+**Lab scope:** Adjacent | **Venue type:** Conference
 
 ## Overview
 
-Long-running conference on parallel processing. Not considered tier-1 but has broad scope covering parallelism topics.
+Long-running conference on parallel processing with broad scope covering parallelism topics.
 
 ## Submission Details
 

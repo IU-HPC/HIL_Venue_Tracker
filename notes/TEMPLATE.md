@@ -1,11 +1,13 @@
 # VENUE — Full Name
 
 **Website:** [URL](URL)
-**Tier:** Top / Regular / Workshop | **Tier-1:** Yes / No
+**Lab scope:** Core / Adjacent / Watch | **Venue type:** Conference / Workshop / Journal
 
 ## Overview
 
 Brief description of the venue's focus and reputation.
+
+**Best fit when:** Describe the contribution and evidence this audience expects.
 
 ## Submission Details
 

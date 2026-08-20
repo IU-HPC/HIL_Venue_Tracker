@@ -1,7 +1,7 @@
 # PPoPP — Principles and Practice of Parallel Programming
 
 **Website:** [ppopp26.sigplan.org](https://ppopp26.sigplan.org)
-**Tier:** Top | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

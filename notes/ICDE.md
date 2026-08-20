@@ -1,7 +1,7 @@
 # ICDE — IEEE International Conference on Data Engineering
 
 **Website:** [icde2026.github.io](https://icde2026.github.io/)
-**Tier:** Regular | **Tier-1:** No (data engineering focused)
+**Lab scope:** Adjacent | **Venue type:** Conference
 
 ## Overview
 

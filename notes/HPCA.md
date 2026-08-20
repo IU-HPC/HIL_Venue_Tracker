@@ -1,7 +1,7 @@
 # HPCA — IEEE International Symposium on High Performance Computer Architecture
 
 **Website:** [hpca-conf.org](https://hpca-conf.org)
-**Tier:** Top | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

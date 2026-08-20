@@ -1,7 +1,7 @@
 # IPDPS — IEEE International Parallel and Distributed Processing Symposium
 
 **Website:** [ipdps.org](https://www.ipdps.org)
-**Tier:** Top | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

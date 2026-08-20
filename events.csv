@@ -1,0 +1,48 @@
+venue,edition,event_type,start_date,end_date,deadline_time,timezone,status,location,source_url,verified_on,notes
+SC,2027,conference,2027-11-15,,,,expected,,https://supercomputing.org/,,Date carried forward from the previous tracker; verify for SC27
+SC,2027,deadline,2027-04-08,,,,expected,,https://supercomputing.org/,,Date carried forward from the previous tracker; verify for SC27
+IPDPS,2027,conference,2027-05-25,,,,expected,,https://www.ipdps.org/,,Date carried forward from the previous tracker; verify for IPDPS 2027
+IPDPS,2027,deadline,2026-10-09,,,,expected,,https://www.ipdps.org/,,Date carried forward from the previous tracker; verify for IPDPS 2027
+PPoPP,2027,conference,2027-01-25,,,,expected,,https://ppopp-conference.org/,,Date carried forward from the previous tracker; verify for PPoPP 2027
+PPoPP,2027,deadline,2026-09-01,,,,expected,,https://ppopp-conference.org/,,Date carried forward from the previous tracker; verify for PPoPP 2027
+ASPLOS,2027,conference,2027-04-11,,,,expected,,https://www.asplos-conference.org/,,Date carried forward from the previous tracker; verify for ASPLOS 2027
+ASPLOS,2027,deadline,2026-04-15,,,,expected,,https://www.asplos-conference.org/,,April cycle; verify for ASPLOS 2027
+ASPLOS,2027,deadline,2026-09-09,,,,expected,,https://www.asplos-conference.org/,,September cycle; verify for ASPLOS 2027
+HPCA,2027,conference,2027-03-07,,,,expected,,https://hpca-conf.org/,,Approximate date; verify for HPCA 2027
+HPCA,2027,deadline,2026-08-09,,,,expected,,https://hpca-conf.org/,,Approximate date; verify for HPCA 2027
+HPDC,2027,conference,2027-07-15,,,,expected,,https://www.hpdc.org/,,Date carried forward from the previous tracker; verify for HPDC 2027
+HPDC,2027,deadline,2027-02-05,,,,expected,,https://www.hpdc.org/,,Date carried forward from the previous tracker; verify for HPDC 2027
+ICS,2027,conference,2027-07-15,,,,expected,,https://www.ics-conference.org/,,Date carried forward from the previous tracker; verify for ICS 2027
+ICS,2027,deadline,2026-12-16,,,,expected,,https://www.ics-conference.org/,,Cycle 1; verify for ICS 2027
+ICS,2027,deadline,2027-02-09,,,,expected,,https://www.ics-conference.org/,,Cycle 2; verify for ICS 2027
+ICDCS,2027,conference,2027-06-15,,,,expected,,https://icdcs.org/,,Date carried forward from the previous tracker; verify for ICDCS 2027
+ICDCS,2027,deadline,2027-01-21,,,,expected,,https://icdcs.org/,,Date carried forward from the previous tracker; verify for ICDCS 2027
+USENIX ATC,2027,conference,2027-07-14,,,,expected,,https://www.usenix.org/conferences/byname/131,,Approximate date; verify venue naming and 2027 cycle
+USENIX ATC,2027,deadline,2027-01-15,,,,expected,,https://www.usenix.org/conferences/byname/131,,Approximate date; verify venue naming and 2027 cycle
+SIGMETRICS,2027,conference,2027-06-09,,,,expected,,https://www.sigmetrics.org/,,Approximate date; verify for SIGMETRICS 2027
+SIGMETRICS,2027,deadline,2026-10-15,,,,expected,,https://www.sigmetrics.org/,,Approximate date; verify for SIGMETRICS 2027
+SIGMOD,2027,conference,2027-06-15,,,,expected,,https://sigmod.org/,,Date carried forward from the previous tracker; verify for SIGMOD 2027
+SIGMOD,2027,deadline,2026-01-17,,,,expected,,https://sigmod.org/,,Round 1; verify for SIGMOD 2027
+SIGMOD,2027,deadline,2026-04-17,,,,expected,,https://sigmod.org/,,Round 2; verify for SIGMOD 2027
+SIGMOD,2027,deadline,2026-07-17,,,,expected,,https://sigmod.org/,,Round 3; verify for SIGMOD 2027
+SIGMOD,2027,deadline,2026-10-17,,,,expected,,https://sigmod.org/,,Round 4; verify for SIGMOD 2027
+VLDB,2027,conference,2027-09-05,,,,expected,,https://www.vldb.org/,,Date carried forward from the previous tracker; verify for VLDB 2027
+VLDB,2027,deadline,2027-03-01,,,,expected,,https://www.vldb.org/,,Rolling monthly deadlines; final March 1 estimate
+MSST,2027,conference,2027-06-05,,,,expected,,https://www.msstconference.org/,,Date carried forward from the previous tracker; verify for MSST 2027
+MSST,2027,deadline,2027-04-04,,,,expected,,https://www.msstconference.org/,,Date carried forward from the previous tracker; verify for MSST 2027
+ICPP,2027,conference,2027-09-28,,,,expected,,https://icpp-conf.org/,,Date carried forward from the previous tracker; verify for ICPP 2027
+ICPP,2027,deadline,2027-05-01,,,,expected,,https://icpp-conf.org/,,Date carried forward from the previous tracker; verify for ICPP 2027
+ICDE,2027,conference,2027-05-05,,,,expected,,https://ieee-icde.org/,,Date carried forward from the previous tracker; verify for ICDE 2027
+ICDE,2027,deadline,2026-06-18,,,,expected,,https://ieee-icde.org/,,Round 1; verify for ICDE 2027
+ICDE,2027,deadline,2026-10-27,,,,expected,,https://ieee-icde.org/,,Round 2; verify for ICDE 2027
+DRBSD,2027,conference,2027-11-15,,,,expected,,https://drbsd.github.io/,,SC workshop date estimate; verify for DRBSD 2027
+DRBSD,2027,deadline,2027-08-15,,,,expected,,https://drbsd.github.io/,,Date carried forward from the previous tracker; verify for DRBSD 2027
+PASC,2027,conference,2027-06-29,2027-07-01,,,expected,,https://pasc-conference.org/,,Date carried forward from PASC26 pattern; verify for PASC27
+PASC,2027,deadline,2026-12-12,,,,expected,,https://pasc-conference.org/,,Abstract; verify for PASC27
+PASC,2027,deadline,2027-02-04,,,,expected,,https://pasc-conference.org/,,Full paper; verify for PASC27
+IEEE BigData,2026,deadline,2026-08-21,,,,confirmed,,https://bigdataieee.org/BigData2026/important-dates/,2026-08-20,Full paper
+IEEE BigData,2026,conference,2026-12-14,2026-12-17,,,confirmed,"Phoenix, Arizona, USA",https://bigdataieee.org/BigData2026/,2026-08-20,
+IWBDR,2026,deadline,2026-10-30,,,,expected,,https://mercury-hpg.github.io/IWBDR-6/,2026-08-20,Full paper; date is explicitly tentative
+IWBDR,2026,conference,2026-12-14,2026-12-17,,,expected,"Phoenix, Arizona, USA",https://mercury-hpg.github.io/IWBDR-6/,2026-08-20,Specific workshop date within the IEEE BigData range is TBA
+MASCOTS,2026,conference,2026-10-20,2026-10-22,,,confirmed,"Genova, Italy",https://mascots26.iitis.pl/,2026-08-20,
+IEEE VIS,2026,conference,2026-11-09,2026-11-13,,,confirmed,"Boston, Massachusetts, USA",https://ieeevis.org/,2026-08-20,

@@ -1,7 +1,7 @@
 # HPDC — International Symposium on High-Performance Parallel and Distributed Computing
 
 **Website:** [hpdc.sci.utah.edu/2026](https://hpdc.sci.utah.edu/2026/)
-**Tier:** Regular | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

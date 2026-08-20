@@ -1,101 +1,115 @@
 # Contributing to HIL Venue Tracker
 
-This project is maintained by the HIL lab. The most valuable contributions are keeping conference dates accurate and filling in missing details in venue notes files. All data lives in plain text files — no special tooling required to contribute.
+The most valuable contributions are confirming current edition dates, improving lab-fit notes, and recording submission details learned through experience. Keep the default view focused on venues the lab is genuinely likely to use.
 
-## How to contribute
+## Before opening a pull request
 
-1. Fork or create a branch from `main`.
-2. Make your changes (see sections below).
-3. Run `python timeline_generator.py` locally to confirm the plot renders correctly.
-4. Open a pull request with a brief description of what changed and why.
-
----
-
-## Updating existing dates
-
-Conference dates shift by a few days each year. Before a submission season, check each venue's CFP page and update `conferences.csv`:
-
-1. Find the venue's current CFP page (the `url` column is a starting point).
-2. Update `month`, `day`, and `year_offset` for all affected rows of that venue.
-3. Update `url` if the CFP page has changed.
-4. Remove `Approximate dates; verify for current year` from the `notes` field once real dates are confirmed.
-
-Run `python report.py --approx` to get a quick list of venues that still have approximate dates.
-
-Do **not** change `BASE_YEAR` in `timeline_generator.py` as part of a routine date update — coordinate with the lab before doing the annual year rollover.
-
----
-
-## Adding a new venue
-
-### 1. Add rows to `conferences.csv`
-
-Add one row per event (one for the conference date, one per deadline):
-
-```
-MYVENUE,Full Conference Name,true,top,conference,5,20,0,https://cfp-url.com,,notes/MYVENUE.md,~20%
-MYVENUE,Full Conference Name,true,top,deadline,10,15,-1,https://cfp-url.com,,notes/MYVENUE.md,~20%
+```bash
+python3 validate_data.py
+python3 report.py --needs-review
+python3 timeline_generator.py --no-show
+python3 generate_ical.py
 ```
 
-**Field guidance:**
+The validator treats malformed data as an error and unconfirmed dates as review warnings. Expected dates are allowed; they simply remain visible in the audit.
 
-| Field | Guidance |
-|-------|----------|
-| `tier1` | `true` for tier-1 or broadly reputable HPC venues. When in doubt use `false` — it can be promoted later. |
-| `tier` | `top` for SC/IPDPS/PPoPP-level venues; `regular` for reputable but not top-tier; `workshop` for co-located workshops. |
-| `year_offset` | `0` for events in `BASE_YEAR`; `-1` for events in the prior calendar year (e.g. an October deadline before a February conference). |
-| `notes` | One-liner flag only. Notes ≤14 characters appear as labels on the timeline plot (e.g. `Cycle 1`, `Round 2`). Avoid commas; use semicolons. |
-| `notes_file` | Relative path to the venue's markdown file, e.g. `notes/MYVENUE.md`. Use the same value on every row for that venue. |
-| `url` | Link to the current CFP page. Update this each year. |
-| `acceptance_rate` | Approximate historical rate, e.g. `~20%`. Leave blank if unknown. This is stable year-to-year so only needs updating if the venue's selectivity changes significantly. |
+## Updating dates
 
-### 2. Create a notes file
+Dates belong in `events.csv`, one row per deadline or conference date range:
 
-Copy [`notes/TEMPLATE.md`](notes/TEMPLATE.md) to `notes/MYVENUE.md` and fill in what you know. Leave sections blank rather than omitting them — blank sections signal to future contributors what still needs research. Good things to document:
+```csv
+venue,edition,event_type,start_date,end_date,deadline_time,timezone,status,location,source_url,verified_on,notes
+MYVENUE,2027,deadline,2026-10-15,,23:59,AoE,confirmed,,https://official-cfp.example/,2026-08-20,Main track
+MYVENUE,2027,conference,2027-05-20,2027-05-23,,,confirmed,"Boston, MA, USA",https://official-site.example/,2026-08-20,
+```
 
-- Submission format (page limit, blind review type, LaTeX template)
-- Review process (number of reviewers, rebuttal, revision cycles)
-- Lab tips (travel grants, student volunteer opportunities, co-located events)
+Rules:
 
-### Tier classification
+- Use the official venue website or CFP as the date source.
+- Use ISO dates (`YYYY-MM-DD`). Do not infer a year from a global base year.
+- `confirmed` requires both `source_url` and `verified_on`.
+- Use `expected` for a planning estimate derived from a prior cycle.
+- Use `tba` when an edition is known but no defensible date estimate exists; `start_date` may be blank.
+- Record an end date for multi-day events.
+- Record an exact deadline time and timezone when the CFP publishes them. Use `AoE` when the venue says Anywhere on Earth.
+- Put track or cycle distinctions in `notes`.
+- Never upgrade an expected date to confirmed merely because multiple aggregators repeat it.
 
-| `tier` value | Meaning |
+## Adding a venue
+
+Add one stable row to `venues.csv`. Do not add deadline metadata to this file.
+
+```csv
+name,full_name,lab_scope,venue_type,fit_tags,lab_fit_notes,url,notes_file,submission_cycle,presented_at,acceptance_rate_5y,acceptance_rate_window,acceptance_rate_source,acceptance_rate_checked,ccf_rank,ccf_year,ccf_field,icore_rank,icore_year,icore_field,ranking_notes
+MYVENUE,My Example Venue,watch,conference,parallel-computing;data-reduction,Promote when the reduction algorithm is the primary contribution,https://official.example/,notes/MYVENUE.md,annual,,,,,,,,,,,,
+```
+
+### Choosing lab scope
+
+| Scope | Guidance |
 |---|---|
-| `top` | Premier HPC venue (SC / IPDPS / PPoPP / ASPLOS / HPCA level) |
-| `regular` | Reputable but not the highest tier |
-| `workshop` | Co-located workshop |
+| `core` | The lab regularly considers it across multiple projects |
+| `adjacent` | Useful for a narrower contribution type or audience |
+| `watch` | Plausible candidate needing lab evaluation |
 
-`tier1` controls whether a venue appears in the default view, independently of `tier`. A `regular` conference can be `tier1=true` if the lab actively targets it.
+Begin uncertain venues in `watch`. Promotion is a lab judgment based on research fit and experience, not an automatic consequence of an external rank.
 
----
+### Venue type
 
-## Removing a venue
+Use `conference`, `workshop`, or `journal`. Do not create a fake conference date for a rolling journal. Use `submission_cycle=rolling` and, when appropriate, `presented_at` to describe a journal-to-conference presentation relationship.
 
-Do not delete rows. Set `tier1=false` and add a short note explaining why (e.g. `not HPC-focused`). This keeps historical context and lets anyone see the full picture with `--show-all`.
+### Fit tags and notes
 
----
+Tags should describe the contribution expected by the venue rather than repeat its title. Reuse existing spelling where possible:
 
-## Updating venue notes
+```text
+parallel-computing  data-reduction  scientific-applications  co-design
+storage-io          data-movement   distributed-computing    workflows
+architecture        hardware        compiler                 runtime
+systems             data-management performance-modeling     compression
+machine-learning    visualization   accelerators             data-analytics
+```
 
-Long-form notes live in `notes/<VENUE>.md`. These are free-form markdown — edit them directly. Useful things to add or update:
+`lab_fit_notes` should complete the sentence “Consider this venue when…”. Avoid reducing fit to a single numeric score.
 
-- Confirmed acceptance rates (update both the notes file and the `acceptance_rate` column in the CSV)
-- Review process details from experience submitting to the venue
-- Changes to submission format or page limits
-- Travel grant deadlines and application links
+### External signals
 
----
+- Keep `ccf_rank` and `icore_rank` separate from `lab_scope`.
+- Always record the ranking edition year.
+- Preserve whether a source describes a conference or journal.
+- Use `ranking_notes` for renamed venues, successor relationships, or ambiguous acronyms.
+- Leave a field blank when a venue is absent; absence is not the same as “unranked.”
 
-## Data format rules
+### Acceptance rates
 
-- **No commas in any CSV field** — use semicolons in `notes`, `full_name`, etc.
-- **One `conference` row per venue** — each venue must have exactly one row with `event_type=conference`. Multiple `deadline` rows are allowed.
-- **Approximate dates** — if only an estimate is available, add `Approximate dates; verify for current year` to the `notes` field. This surfaces the venue in `python report.py --approx`.
-- **Same metadata on every row** — fields like `full_name`, `tier1`, `tier`, `url`, `notes_file`, and `acceptance_rate` should have the same value on every row for a venue (they are venue-level, not event-level).
+Record the measurement window, source URL, and date checked. A mean acceptance rate is historical context, not an acceptance prediction. Do not mix short papers, workshop tracks, or desk rejections into a number unless the source does so and the caveat is documented.
 
----
+## Venue notes
 
-## What not to commit
+Copy `notes/TEMPLATE.md` to `notes/<VENUE>.md`. Notes are the lab-specific part of the tracker and should capture:
 
-- `targets.csv` entries for your own papers — this file is for personal use and should stay local (it is gitignored by convention).
-- Generated output files (`conference_timeline.png`, `deadlines.ics`) — these are regenerated automatically by the GitHub Actions workflow when `conferences.csv` changes.
+- Typical contribution and evaluation expectations
+- Page limits, templates, and review model
+- Rebuttal, revision, and artifact processes
+- Travel support and co-located events
+- Lab experience and recurring reviewer feedback
+
+Leave unknown sections present rather than inventing details.
+
+## Removing or demoting a venue
+
+Do not erase useful history. Change `lab_scope` to `adjacent` or `watch`, explain the decision in `lab_fit_notes` or the notes file, and retain old edition events when they provide planning context.
+
+## CSV conventions
+
+- CSV quoting is supported; quote fields containing commas.
+- Use semicolons only to separate `fit_tags`.
+- Venue names are stable join keys and must match exactly between both CSV files and `targets.csv`.
+- One venue may have multiple deadlines and multiple editions.
+- Do not duplicate stable metadata in `events.csv`.
+
+## What not to commit manually
+
+- Personal `targets.csv` entries.
+- Python caches or local environments.
+- Hand-edited PNG or ICS output. The workflow regenerates tracked artifacts from the CSV data after changes.

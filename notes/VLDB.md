@@ -1,7 +1,7 @@
 # VLDB — International Conference on Very Large Databases
 
 **Website:** [vldb.org](https://www.vldb.org)
-**Tier:** Regular | **Tier-1:** No (database-focused)
+**Lab scope:** Adjacent | **Venue type:** Conference
 
 ## Overview
 

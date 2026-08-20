@@ -1,7 +1,7 @@
 # SC — Supercomputing
 
 **Website:** [sc26.supercomputing.org](https://sc26.supercomputing.org)
-**Tier:** Top | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

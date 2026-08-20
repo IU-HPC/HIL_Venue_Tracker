@@ -1,7 +1,7 @@
 # TACO — ACM Transactions on Architecture and Code Optimization
 
 **Website:** [taco.acm.org](https://taco.acm.org)
-**Tier:** Top | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Journal
 
 ## Overview
 

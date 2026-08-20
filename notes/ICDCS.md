@@ -1,7 +1,7 @@
 # ICDCS — International Conference on Distributed Computing Systems
 
 **Website:** [icdcs2026.icdcs.org](https://icdcs2026.icdcs.org/)
-**Tier:** Regular | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

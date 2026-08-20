@@ -1,7 +1,7 @@
 # SigMetrics — ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems
 
 **Website:** [sigmetrics.org/sigmetrics2026](https://www.sigmetrics.org/sigmetrics2026/)
-**Tier:** Regular | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

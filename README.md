@@ -1,164 +1,170 @@
 # HIL Venue Tracker
 
-A lightweight tool for tracking HPC conference submission deadlines and event dates. Generates a visual timeline, text reports, and a calendar export to help lab members plan paper submissions throughout the year.
+A lightweight, lab-focused tool for deciding when and where to publish work in parallel computation, data reduction, and application/computing co-design. It combines upcoming deadlines with research fit, lab context, external rankings, historical selectivity, and source-verification status.
 
-## Setup
+This is intentionally not a comprehensive CS conference directory. The default view stays limited to venues the HIL lab commonly considers.
+
+## Quick start
 
 Requires Python 3 and `matplotlib`:
 
 ```bash
-pip install matplotlib
+python3 -m pip install matplotlib
+python3 report.py --next 5
+python3 timeline_generator.py --no-show
+python3 generate_ical.py
 ```
 
----
+Validate the data before committing changes:
+
+```bash
+python3 validate_data.py
+```
+
+## Lab scopes
+
+External reputation and lab relevance are deliberately separate.
+
+| Scope | Meaning |
+|---|---|
+| `core` | Regularly useful for the lab; shown by default |
+| `adjacent` | Relevant for particular contribution types |
+| `watch` | Candidate venue to investigate and promote when appropriate |
+
+CCF and ICORE ranks are independent evidence fields. They do not control lab scope. For example, a focused workshop can be highly useful to the lab without appearing in either ranking system.
 
 ## Tools
 
-### Timeline (`timeline_generator.py`)
-
-Generates a visual PNG timeline showing deadlines and conference dates sorted by earliest deadline.
+### Decision report (`report.py`)
 
 ```bash
-python timeline_generator.py                        # tier-1 venues only (default)
-python timeline_generator.py --show-all             # include non-tier-1 venues (shown faded)
-python timeline_generator.py --output my_plot.png   # custom output path
-python timeline_generator.py --no-show              # save without opening a viewer (CI/headless)
+python3 report.py                                      # core lab scope
+python3 report.py --scope adjacent                     # adjacent venues only
+python3 report.py --scope all                          # every scope
+python3 report.py --fit data-reduction                 # matching research fit
+python3 report.py --fit data-reduction,scientific-applications
+python3 report.py --scope watch --fit storage-io       # investigate candidates
+python3 report.py --next 5                             # nearest deadlines
+python3 report.py --needs-review                       # stale/unverified dates
+python3 report.py --since 2026-10-01 --until 2027-03-31
 ```
 
-Output: `conference_timeline.png`
+`--fit` keeps venues matching at least one requested tag and sorts stronger matches first. The report explains why each venue fits, shows external signals separately, and labels dates as `confirmed`, `expected`, or `TBA`.
 
-- Diamond markers (◆) = paper deadlines, with the date above and short notes below (e.g. "Cycle 1")
-- Star markers (★) = conference dates
-- Venues sorted top-to-bottom by earliest upcoming deadline
-- Non-tier-1 venues rendered faded when using `--show-all`
-
----
-
-### Text Report (`report.py`)
-
-Prints a deadline summary to the terminal with urgency coloring, acceptance rates, and targeting info.
-
-```bash
-python report.py                             # tier-1 venues, sorted by earliest deadline
-python report.py --show-all                  # include non-tier-1 venues (dimmed)
-python report.py --approx                    # only venues with approximate dates (verification audit)
-python report.py --next 5                    # 5 nearest upcoming deadlines (compact view)
-python report.py --until 2026-12-31          # deadlines on or before this date
-python report.py --since 2026-10-01          # deadlines on or after this date
-python report.py --since 2026-10-01 --until 2026-12-31  # date window
-```
-
-Deadline urgency coloring: red = within 30 days, yellow = within 60 days, gray = further out or passed.
+`--show-all` remains as an alias for `--scope all`; `--approx` remains as an alias for `--needs-review`.
 
 #### Targeting papers (`targets.csv`)
 
-To flag which conferences you are actively targeting for a specific paper or project, add entries to [`targets.csv`](targets.csv):
+Create a local `targets.csv` to flag active plans:
 
-```
+```csv
 venue,paper,notes
-SC,compression paper,targeting Apr 8 deadline
+SC,compression paper,targeting the April deadline
 IPDPS,checkpoint work,waiting on benchmark results
 ```
 
-- `venue` must match the short name in `conferences.csv` (e.g. `SC`, `IPDPS`)
-- Multiple papers can target the same venue; one paper can target multiple venues
-- Targets appear as `>> Targeting:` lines in the full report and as a `★` marker in `--next`
-- `targets.csv` is personal — don't commit targeting entries for your own papers to the shared repo
+Venue names must match `venues.csv`. Targets are personal and gitignored. They appear in reports but are not shared with the lab.
 
----
-
-### Calendar Export (`generate_ical.py`)
-
-Exports deadlines and conference dates to an `.ics` file. Each **deadline** event includes a **30-day advance reminder** so it appears in your calendar automatically.
+### Timeline (`timeline_generator.py`)
 
 ```bash
-python generate_ical.py                         # tier-1 venues only
-python generate_ical.py --show-all              # include non-tier-1 venues
-python generate_ical.py --output my_cal.ics     # custom output path
+python3 timeline_generator.py --no-show
+python3 timeline_generator.py --scope adjacent --output adjacent.png --no-show
+python3 timeline_generator.py --scope all --output conference_timeline_all.png --no-show
 ```
 
-Output: `deadlines.ics`
+- Diamonds are paper deadlines; stars are venue start dates.
+- Hollow markers mean expected or unverified; date labels remain plain positive dates.
+- Colors show lab scope, not prestige.
+- Venue labels show available CCF and ICORE tiers independently.
+- Journals and watchlist entries without dated events do not appear on the timeline.
 
-| App | How to subscribe |
-|-----|-----------------|
-| Google Calendar | Settings → Add calendar → From URL (or import the file) |
-| Apple Calendar | File → Import |
-| Outlook | File → Open & Export → Import/Export |
+### Calendar export (`generate_ical.py`)
 
-Tip: if your calendar app supports subscribing to a URL, point it at the raw `deadlines.ics` in the repository and it will stay updated automatically whenever the file is regenerated.
+```bash
+python3 generate_ical.py
+python3 generate_ical.py --scope all --output all-deadlines.ics
+```
 
----
+Deadline events include a 30-day reminder. Expected dates are explicitly labeled `[EXPECTED]` in the calendar. Multi-day venue events use their full date range when known.
 
-## Data
+## Data model
 
-All conference data lives in [`conferences.csv`](conferences.csv). Each row represents a single event — either a paper deadline or the conference date — for a given venue.
+The data is split so stable venue knowledge is not duplicated on every deadline.
 
-### CSV Schema
+### `venues.csv`
 
-| Field | Description |
-|-------|-------------|
-| `name` | Short venue name (e.g. `SC`, `IPDPS`) |
-| `full_name` | Full official venue name |
-| `tier1` | `true` = shown in default view; `false` = hidden unless `--show-all` is used |
-| `tier` | `top`, `regular`, or `workshop` |
-| `event_type` | `conference` or `deadline` |
-| `month` | Month of the event (1–12) |
-| `day` | Day of the event |
-| `year_offset` | Offset from `BASE_YEAR` in `timeline_generator.py`: `0` = base year, `-1` = prior year |
-| `url` | CFP or conference homepage |
-| `notes` | Short inline note (≤14 chars shows on the plot; avoid commas, use semicolons) |
-| `notes_file` | Path to the long-form notes file, e.g. `notes/SC.md` |
-| `acceptance_rate` | Approximate historical acceptance rate, e.g. `~18%` |
+One row per publication venue.
 
-### Tracked Venues
+| Field | Purpose |
+|---|---|
+| `name`, `full_name` | Stable identity |
+| `lab_scope` | `core`, `adjacent`, or `watch` |
+| `venue_type` | `conference`, `workshop`, or `journal` |
+| `fit_tags` | Semicolon-separated research facets used by `--fit` |
+| `lab_fit_notes` | Short explanation of when the lab should consider it |
+| `url`, `notes_file` | Official landing page and local long-form notes |
+| `submission_cycle`, `presented_at` | Annual/rolling behavior and journal presentation relationship |
+| `acceptance_rate_5y`, source fields | Sourced historical selectivity with window and check date |
+| `ccf_*`, `icore_*` | Independent rank, edition year, and field classification |
+| `ranking_notes` | Alias, type, or interpretation caveats |
 
-**Tier-1 — shown by default**
+`fit_tags` are facets, not a magic score. Useful current tags include `parallel-computing`, `data-reduction`, `scientific-applications`, `co-design`, `storage-io`, `architecture`, `runtime`, `systems`, and `workflows`.
 
-| Venue | Tier | Acceptance |
-|-------|------|-----------|
-| SC | Top | N/A |
-| IPDPS | Top | N/A |
-| PPoPP | Top | N/A |
-| ASPLOS | Top | N/A |
-| HPCA | Top | N/A |
-| TACO | Top | N/A (rolling review; presented at MICRO) |
-| HPDC | Regular | N/A |
-| ICS | Regular | N/A |
-| ICDCS | Regular | N/A |
-| USENIX ATC | Regular | N/A |
-| SigMetrics | Regular | N/A |
-| PASC | Regular | N/A |
+### `events.csv`
 
-**Non-tier-1 — tracked but hidden by default (`--show-all` to display)**
+One row per edition-specific deadline or venue event.
 
-SIGMOD, VLDB, MSST, ICPP, ICDE, DRBSD
+| Field | Purpose |
+|---|---|
+| `venue`, `edition` | Links the event to `venues.csv` and an edition |
+| `event_type` | `deadline` or `conference` |
+| `start_date`, `end_date` | Explicit ISO dates; `end_date` supports multi-day events |
+| `deadline_time`, `timezone` | Optional exact deadline time and zone, including AoE when stated |
+| `status` | `confirmed`, `expected`, or `tba` |
+| `location` | City/country or virtual/hybrid description |
+| `source_url`, `verified_on` | Provenance and last human verification date |
+| `notes` | Cycle, track, or uncertainty note |
 
-### Venue notes
+All dates migrated from the old base-year tracker are currently marked `expected`. Most inherited links referenced 2026 editions while the calculated events represented the 2027 cycle. Run `python3 report.py --needs-review` to work through them; do not silently treat carried-forward dates as confirmed.
 
-Each venue has a long-form notes file in [`notes/`](notes/) covering submission format, review process, and lab tips. The short `notes` CSV column is for one-liner flags only; anything longer belongs in the markdown file. Use [`notes/TEMPLATE.md`](notes/TEMPLATE.md) when adding a new venue.
+## Current venue set
 
-### Updating for a new year
+**Core:** SC, IPDPS, PPoPP, ASPLOS, HPCA, TACO, TPDS, HPDC, ICS, ICDCS, USENIX ATC, SIGMETRICS, PASC.
 
-1. Update `BASE_YEAR` at the top of `timeline_generator.py` (coordinate with the lab first).
-2. Verify and update dates in `conferences.csv` — check each venue's CFP page.
-3. Update `url` fields if CFP pages have changed.
-4. Run `python report.py --approx` to quickly audit which venues still have approximate dates.
-5. Commit and open a PR (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+**Adjacent:** SIGMOD, VLDB, MSST, ICPP, ICDE, DRBSD, CLUSTER, HiPC, IEEE BigData, IWBDR.
 
----
+**Watch:** FAST, CCGRID, e-Science, PACT, CGO, MICRO, ISCA, EuroSys, OSDI, DCC, MASCOTS, IEEE VIS, ISC.
+
+Watch entries do not receive speculative deadlines. Confirmed edition events may be recorded for planning, but promotion remains a lab decision based on recurring research fit.
+
+## External reference sources
+
+These sources support discovery and cross-checking; the official venue CFP remains authoritative for dates and submission rules.
+
+- [Oxford Ranked Conference List](https://www.cs.ox.ac.uk/people/michael.wooldridge/conferences.html) — broad legacy discovery list with older field classifications; useful for finding names, not current deadlines.
+- [Computer Science Conference Publication Stats](https://csconferences.org/) — rolling five-year acceptance-rate summaries for selected venues. Rates in `venues.csv` record this source and the date checked.
+- [CCF Recommended International Conferences and Journals](https://ccf.atom.im/) — Chinese Computer Federation A/B/C classifications. The relevant field `计算机体系结构/并行与分布计算/存储系统` is stored in English as `architecture-parallel-distributed-storage`; conference and journal types remain distinct.
+- [CORE/ICORE Conference Portal](https://portal.core.edu.au/) and [ranking documentation](https://www.core.edu.au/conference-portal) — independent A*/A/B/C and Field of Research classifications. Stored values use the 2026 ICORE edition.
+- [FZ/SZ publication record](https://fzframework.org/publications/) — community evidence for where scientific data-reduction work has actually appeared. It informs fit and scope decisions but is not treated as a ranking or an acceptance-rate dataset.
+
+Another useful community deadline reference is [Architecture & System Conference Deadlines](https://casys-kaist.github.io/?sub=ARCH,SYS,ML,OTHER,TBD).
+
+## Updating an edition
+
+1. Open the official CFP—not a ranking or deadline aggregator.
+2. Add or update explicit rows in `events.csv`.
+3. Use `status=confirmed` only with `source_url` and `verified_on`.
+4. Record the full venue date range, location, deadline time, and timezone when published.
+5. Run `python3 validate_data.py` and `python3 report.py --needs-review`.
+6. Regenerate the timeline and calendar or let GitHub Actions do it after merge.
+
+There is no global base-year rollover. Multiple editions and years can coexist in `events.csv`.
 
 ## Automation
 
-A GitHub Actions workflow ([`.github/workflows/update-timeline.yml`](.github/workflows/update-timeline.yml)) automatically regenerates `conference_timeline.png`, `conference_timeline_all.png`, and `deadlines.ics` whenever `conferences.csv` changes on `main`. Lab members who don't run the tools locally will always see a current plot and calendar file in the repository.
-
-To enable: go to **Settings → Actions → General → Workflow permissions** and set to **Read and write**.
-
----
-
-## See also
-
-[Architecture & System Conference Deadlines](https://casys-kaist.github.io/?sub=ARCH,SYS,ML,OTHER,TBD) — a related community-maintained tracker.
+The GitHub Actions workflow in [`.github/workflows/update-timeline.yml`](.github/workflows/update-timeline.yml) validates the CSV files and regenerates `conference_timeline.png`, `conference_timeline_all.png`, and `deadlines.ics` when venue data or generator code changes, monthly, or on manual request.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add venues, update dates, and submit changes.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for data rules and examples.

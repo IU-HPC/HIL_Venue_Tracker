@@ -1,7 +1,7 @@
 # ASPLOS — ACM International Conference on Architectural Support for Programming Languages and Operating Systems
 
 **Website:** [asplos-conference.org](https://www.asplos-conference.org/)
-**Tier:** Top | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

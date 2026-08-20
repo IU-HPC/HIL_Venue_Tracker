@@ -1,7 +1,7 @@
 # DRBSD — International Workshop on Data Analysis and Reduction for Big Scientific Data
 
 **Website:** [drbsd.github.io](https://drbsd.github.io/)
-**Tier:** Workshop | **Tier-1:** No
+**Lab scope:** Adjacent | **Venue type:** Workshop
 
 ## Overview
 

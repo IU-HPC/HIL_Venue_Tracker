@@ -1,7 +1,7 @@
 # PASC — Platform for Advanced Scientific Computing Conference
 
 **Website:** [pasc-conference.org/editions/pasc26](https://pasc-conference.org/editions/pasc26/)
-**Tier:** Regular | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

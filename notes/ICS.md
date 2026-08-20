@@ -1,7 +1,7 @@
 # ICS — International Conference on Supercomputing
 
 **Website:** [dipsa-qub.github.io/ICS2026-webpage](https://dipsa-qub.github.io/ICS2026-webpage/)
-**Tier:** Regular | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

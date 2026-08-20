@@ -1,7 +1,7 @@
 # USENIX ATC — USENIX Annual Technical Conference
 
 **Website:** [usenix.org/conference/atc26](https://www.usenix.org/conference/atc26)
-**Tier:** Regular | **Tier-1:** Yes
+**Lab scope:** Core | **Venue type:** Conference
 
 ## Overview
 

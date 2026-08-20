@@ -3,325 +3,311 @@ VERSION:2.0
 PRODID:-//HIL Venue Tracker//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:HIL Conference Deadlines
-X-WR-CALDESC:HPC conference submission deadlines and event dates
+X-WR-CALNAME:HIL Venue Deadlines (core)
+X-WR-CALDESC:Lab-focused publication deadlines and venue dates
 BEGIN:VEVENT
-UID:SC-deadline-20270408@hil-venue-tracker
+UID:sc-2027-deadline-20270408@hil-venue-tracker
 DTSTART;VALUE=DATE:20270408
 DTEND;VALUE=DATE:20270409
-SUMMARY:SC Paper Deadline
-DESCRIPTION:SC (Supercomputing) submission deadline.
-URL:https://sc26.supercomputing.org
+SUMMARY:SC Paper Deadline [EXPECTED]
+DESCRIPTION:International Conference for High Performance Computing\, Netwo
+ rking\, Storage\, and Analysis submission deadline. Status: expected. Sour
+ ce: https://supercomputing.org/
+URL:https://supercomputing.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: SC Paper Deadline
+DESCRIPTION:Reminder: SC Paper Deadline [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:SC-conference-20271115@hil-venue-tracker
+UID:sc-2027-event-20271115@hil-venue-tracker
 DTSTART;VALUE=DATE:20271115
 DTEND;VALUE=DATE:20271116
-SUMMARY:SC Conference
-DESCRIPTION:SC (Supercomputing).
-URL:https://sc26.supercomputing.org
+SUMMARY:SC Conference [EXPECTED]
+DESCRIPTION:International Conference for High Performance Computing\, Netwo
+ rking\, Storage\, and Analysis. Status: expected. Source: https://supercom
+ puting.org/
+URL:https://supercomputing.org/
 END:VEVENT
 BEGIN:VEVENT
-UID:IPDPS-deadline-20261009@hil-venue-tracker
+UID:ipdps-2027-deadline-20261009@hil-venue-tracker
 DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261010
-SUMMARY:IPDPS Paper Deadline
+SUMMARY:IPDPS Paper Deadline [EXPECTED]
 DESCRIPTION:IEEE International Parallel and Distributed Processing Symposiu
- m submission deadline.
-URL:https://www.ipdps.org
+ m submission deadline. Status: expected. Source: https://www.ipdps.org/
+URL:https://www.ipdps.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: IPDPS Paper Deadline
+DESCRIPTION:Reminder: IPDPS Paper Deadline [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:IPDPS-conference-20270525@hil-venue-tracker
+UID:ipdps-2027-event-20270525@hil-venue-tracker
 DTSTART;VALUE=DATE:20270525
 DTEND;VALUE=DATE:20270526
-SUMMARY:IPDPS Conference
+SUMMARY:IPDPS Conference [EXPECTED]
 DESCRIPTION:IEEE International Parallel and Distributed Processing Symposiu
- m.
-URL:https://www.ipdps.org
+ m. Status: expected. Source: https://www.ipdps.org/
+URL:https://www.ipdps.org/
 END:VEVENT
 BEGIN:VEVENT
-UID:PPoPP-deadline-20260901@hil-venue-tracker
+UID:ppopp-2027-deadline-20260901@hil-venue-tracker
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20260902
-SUMMARY:PPoPP Paper Deadline
-DESCRIPTION:Principles and Practice of Parallel Programming submission dead
- line.
-URL:https://ppopp26.sigplan.org
+SUMMARY:PPoPP Paper Deadline [EXPECTED]
+DESCRIPTION:ACM SIGPLAN Symposium on Principles and Practice of Parallel Pr
+ ogramming submission deadline. Status: expected. Source: https://ppopp-con
+ ference.org/
+URL:https://ppopp-conference.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: PPoPP Paper Deadline
+DESCRIPTION:Reminder: PPoPP Paper Deadline [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:PPoPP-conference-20270125@hil-venue-tracker
+UID:ppopp-2027-event-20270125@hil-venue-tracker
 DTSTART;VALUE=DATE:20270125
 DTEND;VALUE=DATE:20270126
-SUMMARY:PPoPP Conference
-DESCRIPTION:Principles and Practice of Parallel Programming.
-URL:https://ppopp26.sigplan.org
+SUMMARY:PPoPP Conference [EXPECTED]
+DESCRIPTION:ACM SIGPLAN Symposium on Principles and Practice of Parallel Pr
+ ogramming. Status: expected. Source: https://ppopp-conference.org/
+URL:https://ppopp-conference.org/
 END:VEVENT
 BEGIN:VEVENT
-UID:ASPLOS-deadline-20260415@hil-venue-tracker
+UID:asplos-2027-deadline-20260415@hil-venue-tracker
 DTSTART;VALUE=DATE:20260415
 DTEND;VALUE=DATE:20260416
-SUMMARY:ASPLOS Paper Deadline (April cycle)
+SUMMARY:ASPLOS Paper Deadline (April cycle) [EXPECTED]
 DESCRIPTION:ACM International Conference on Architectural Support for Progr
- amming Languages and Operating Systems submission deadline. (April cycle)
+ amming Languages and Operating Systems submission deadline. Status: expect
+ ed. Source: https://www.asplos-conference.org/
 URL:https://www.asplos-conference.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: ASPLOS Paper Deadline (April cycle)
+DESCRIPTION:Reminder: ASPLOS Paper Deadline (April cycle) [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:ASPLOS-deadline-20260909@hil-venue-tracker
+UID:asplos-2027-deadline-20260909@hil-venue-tracker
 DTSTART;VALUE=DATE:20260909
 DTEND;VALUE=DATE:20260910
-SUMMARY:ASPLOS Paper Deadline (Sep cycle)
+SUMMARY:ASPLOS Paper Deadline (September cycle) [EXPECTED]
 DESCRIPTION:ACM International Conference on Architectural Support for Progr
- amming Languages and Operating Systems submission deadline. (Sep cycle)
+ amming Languages and Operating Systems submission deadline. Status: expect
+ ed. Source: https://www.asplos-conference.org/
 URL:https://www.asplos-conference.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: ASPLOS Paper Deadline (Sep cycle)
+DESCRIPTION:Reminder: ASPLOS Paper Deadline (September cycle) [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:ASPLOS-conference-20270411@hil-venue-tracker
+UID:asplos-2027-event-20270411@hil-venue-tracker
 DTSTART;VALUE=DATE:20270411
 DTEND;VALUE=DATE:20270412
-SUMMARY:ASPLOS Conference
+SUMMARY:ASPLOS Conference [EXPECTED]
 DESCRIPTION:ACM International Conference on Architectural Support for Progr
- amming Languages and Operating Systems.
+ amming Languages and Operating Systems. Status: expected. Source: https://
+ www.asplos-conference.org/
 URL:https://www.asplos-conference.org/
 END:VEVENT
 BEGIN:VEVENT
-UID:HPCA-deadline-20260809@hil-venue-tracker
+UID:hpca-2027-deadline-20260809@hil-venue-tracker
 DTSTART;VALUE=DATE:20260809
 DTEND;VALUE=DATE:20260810
-SUMMARY:HPCA Paper Deadline (Approximate dates; verify for current year)
-DESCRIPTION:IEEE International Symposium on High Performance Computer Archi
- tecture submission deadline. (Approximate dates; verify for current year)
-URL:https://hpca-conf.org
+SUMMARY:HPCA Paper Deadline [EXPECTED]
+DESCRIPTION:IEEE International Symposium on High-Performance Computer Archi
+ tecture submission deadline. Status: expected. Source: https://hpca-conf.o
+ rg/
+URL:https://hpca-conf.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: HPCA Paper Deadline (Approximate dates; verify for cu
- rrent year)
+DESCRIPTION:Reminder: HPCA Paper Deadline [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:HPCA-conference-20270307@hil-venue-tracker
+UID:hpca-2027-event-20270307@hil-venue-tracker
 DTSTART;VALUE=DATE:20270307
 DTEND;VALUE=DATE:20270308
-SUMMARY:HPCA Conference
-DESCRIPTION:IEEE International Symposium on High Performance Computer Archi
- tecture.
-URL:https://hpca-conf.org
+SUMMARY:HPCA Conference [EXPECTED]
+DESCRIPTION:IEEE International Symposium on High-Performance Computer Archi
+ tecture. Status: expected. Source: https://hpca-conf.org/
+URL:https://hpca-conf.org/
 END:VEVENT
 BEGIN:VEVENT
-UID:TACO-deadline-20270701@hil-venue-tracker
-DTSTART;VALUE=DATE:20270701
-DTEND;VALUE=DATE:20270702
-SUMMARY:TACO Paper Deadline (Approximate soft deadline for MICRO presentati
- on; rolling review)
-DESCRIPTION:ACM Transactions on Architecture and Code Optimization submissi
- on deadline. (Approximate soft deadline for MICRO presentation; rolling re
- view)
-URL:https://taco.acm.org
-BEGIN:VALARM
-TRIGGER:-P30D
-ACTION:DISPLAY
-DESCRIPTION:Reminder: TACO Paper Deadline (Approximate soft deadline for MI
- CRO presentation; rolling review)
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:TACO-conference-20271018@hil-venue-tracker
-DTSTART;VALUE=DATE:20271018
-DTEND;VALUE=DATE:20271019
-SUMMARY:TACO Conference
-DESCRIPTION:ACM Transactions on Architecture and Code Optimization.
-URL:https://taco.acm.org
-END:VEVENT
-BEGIN:VEVENT
-UID:HPDC-deadline-20270205@hil-venue-tracker
+UID:hpdc-2027-deadline-20270205@hil-venue-tracker
 DTSTART;VALUE=DATE:20270205
 DTEND;VALUE=DATE:20270206
-SUMMARY:HPDC Paper Deadline
-DESCRIPTION:International Symposium on High-Performance Parallel and Distri
- buted Computing submission deadline.
-URL:https://hpdc.sci.utah.edu/2026/
+SUMMARY:HPDC Paper Deadline [EXPECTED]
+DESCRIPTION:ACM International Symposium on High-Performance Parallel and Di
+ stributed Computing submission deadline. Status: expected. Source: https:/
+ /www.hpdc.org/
+URL:https://www.hpdc.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: HPDC Paper Deadline
+DESCRIPTION:Reminder: HPDC Paper Deadline [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:HPDC-conference-20270715@hil-venue-tracker
+UID:hpdc-2027-event-20270715@hil-venue-tracker
 DTSTART;VALUE=DATE:20270715
 DTEND;VALUE=DATE:20270716
-SUMMARY:HPDC Conference
-DESCRIPTION:International Symposium on High-Performance Parallel and Distri
- buted Computing.
-URL:https://hpdc.sci.utah.edu/2026/
+SUMMARY:HPDC Conference [EXPECTED]
+DESCRIPTION:ACM International Symposium on High-Performance Parallel and Di
+ stributed Computing. Status: expected. Source: https://www.hpdc.org/
+URL:https://www.hpdc.org/
 END:VEVENT
 BEGIN:VEVENT
-UID:ICS-deadline-20261216@hil-venue-tracker
+UID:ics-2027-deadline-20261216@hil-venue-tracker
 DTSTART;VALUE=DATE:20261216
 DTEND;VALUE=DATE:20261217
-SUMMARY:ICS Paper Deadline (Cycle 1)
-DESCRIPTION:International Conference on Supercomputing submission deadline.
-  (Cycle 1)
-URL:https://dipsa-qub.github.io/ICS2026-webpage/
+SUMMARY:ICS Paper Deadline (Cycle 1) [EXPECTED]
+DESCRIPTION:ACM International Conference on Supercomputing submission deadl
+ ine. Status: expected. Source: https://www.ics-conference.org/
+URL:https://www.ics-conference.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: ICS Paper Deadline (Cycle 1)
+DESCRIPTION:Reminder: ICS Paper Deadline (Cycle 1) [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:ICS-deadline-20270209@hil-venue-tracker
+UID:ics-2027-deadline-20270209@hil-venue-tracker
 DTSTART;VALUE=DATE:20270209
 DTEND;VALUE=DATE:20270210
-SUMMARY:ICS Paper Deadline (Cycle 2)
-DESCRIPTION:International Conference on Supercomputing submission deadline.
-  (Cycle 2)
-URL:https://dipsa-qub.github.io/ICS2026-webpage/
+SUMMARY:ICS Paper Deadline (Cycle 2) [EXPECTED]
+DESCRIPTION:ACM International Conference on Supercomputing submission deadl
+ ine. Status: expected. Source: https://www.ics-conference.org/
+URL:https://www.ics-conference.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: ICS Paper Deadline (Cycle 2)
+DESCRIPTION:Reminder: ICS Paper Deadline (Cycle 2) [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:ICS-conference-20270715@hil-venue-tracker
+UID:ics-2027-event-20270715@hil-venue-tracker
 DTSTART;VALUE=DATE:20270715
 DTEND;VALUE=DATE:20270716
-SUMMARY:ICS Conference
-DESCRIPTION:International Conference on Supercomputing.
-URL:https://dipsa-qub.github.io/ICS2026-webpage/
+SUMMARY:ICS Conference [EXPECTED]
+DESCRIPTION:ACM International Conference on Supercomputing. Status: expecte
+ d. Source: https://www.ics-conference.org/
+URL:https://www.ics-conference.org/
 END:VEVENT
 BEGIN:VEVENT
-UID:ICDCS-deadline-20270121@hil-venue-tracker
+UID:icdcs-2027-deadline-20270121@hil-venue-tracker
 DTSTART;VALUE=DATE:20270121
 DTEND;VALUE=DATE:20270122
-SUMMARY:ICDCS Paper Deadline
-DESCRIPTION:International Conference on Distributed Computing Systems submi
- ssion deadline.
-URL:https://icdcs2026.icdcs.org/
+SUMMARY:ICDCS Paper Deadline [EXPECTED]
+DESCRIPTION:IEEE International Conference on Distributed Computing Systems 
+ submission deadline. Status: expected. Source: https://icdcs.org/
+URL:https://icdcs.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: ICDCS Paper Deadline
+DESCRIPTION:Reminder: ICDCS Paper Deadline [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:ICDCS-conference-20270615@hil-venue-tracker
+UID:icdcs-2027-event-20270615@hil-venue-tracker
 DTSTART;VALUE=DATE:20270615
 DTEND;VALUE=DATE:20270616
-SUMMARY:ICDCS Conference
-DESCRIPTION:International Conference on Distributed Computing Systems.
-URL:https://icdcs2026.icdcs.org/
+SUMMARY:ICDCS Conference [EXPECTED]
+DESCRIPTION:IEEE International Conference on Distributed Computing Systems.
+  Status: expected. Source: https://icdcs.org/
+URL:https://icdcs.org/
 END:VEVENT
 BEGIN:VEVENT
-UID:USENIX-ATC-deadline-20270115@hil-venue-tracker
+UID:usenix-atc-2027-deadline-20270115@hil-venue-tracker
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
-SUMMARY:USENIX ATC Paper Deadline (Approximate dates; verify for current ye
- ar)
-DESCRIPTION:USENIX Annual Technical Conference submission deadline. (Approx
- imate dates; verify for current year)
-URL:https://www.usenix.org/conference/atc26
+SUMMARY:USENIX ATC Paper Deadline [EXPECTED]
+DESCRIPTION:USENIX Annual Technical Conference submission deadline. Status:
+  expected. Source: https://www.usenix.org/conferences/byname/131
+URL:https://www.usenix.org/conferences/byname/131
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: USENIX ATC Paper Deadline (Approximate dates; verify 
- for current year)
+DESCRIPTION:Reminder: USENIX ATC Paper Deadline [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:USENIX-ATC-conference-20270714@hil-venue-tracker
+UID:usenix-atc-2027-event-20270714@hil-venue-tracker
 DTSTART;VALUE=DATE:20270714
 DTEND;VALUE=DATE:20270715
-SUMMARY:USENIX ATC Conference
-DESCRIPTION:USENIX Annual Technical Conference.
-URL:https://www.usenix.org/conference/atc26
+SUMMARY:USENIX ATC Conference [EXPECTED]
+DESCRIPTION:USENIX Annual Technical Conference. Status: expected. Source: h
+ ttps://www.usenix.org/conferences/byname/131
+URL:https://www.usenix.org/conferences/byname/131
 END:VEVENT
 BEGIN:VEVENT
-UID:SigMetrics-deadline-20261015@hil-venue-tracker
+UID:sigmetrics-2027-deadline-20261015@hil-venue-tracker
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261016
-SUMMARY:SigMetrics Paper Deadline (Approximate dates; verify for current ye
- ar)
+SUMMARY:SIGMETRICS Paper Deadline [EXPECTED]
 DESCRIPTION:ACM SIGMETRICS International Conference on Measurement and Mode
- ling of Computer Systems submission deadline. (Approximate dates; verify f
- or current year)
-URL:https://www.sigmetrics.org/sigmetrics2026/
+ ling of Computer Systems submission deadline. Status: expected. Source: ht
+ tps://www.sigmetrics.org/
+URL:https://www.sigmetrics.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: SigMetrics Paper Deadline (Approximate dates; verify 
- for current year)
+DESCRIPTION:Reminder: SIGMETRICS Paper Deadline [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:SigMetrics-conference-20270609@hil-venue-tracker
+UID:sigmetrics-2027-event-20270609@hil-venue-tracker
 DTSTART;VALUE=DATE:20270609
 DTEND;VALUE=DATE:20270610
-SUMMARY:SigMetrics Conference
+SUMMARY:SIGMETRICS Conference [EXPECTED]
 DESCRIPTION:ACM SIGMETRICS International Conference on Measurement and Mode
- ling of Computer Systems.
-URL:https://www.sigmetrics.org/sigmetrics2026/
+ ling of Computer Systems. Status: expected. Source: https://www.sigmetrics
+ .org/
+URL:https://www.sigmetrics.org/
 END:VEVENT
 BEGIN:VEVENT
-UID:PASC-deadline-20261212@hil-venue-tracker
+UID:pasc-2027-deadline-20261212@hil-venue-tracker
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
-SUMMARY:PASC Paper Deadline (Abstract)
+SUMMARY:PASC Paper Deadline (Abstract) [EXPECTED]
 DESCRIPTION:Platform for Advanced Scientific Computing Conference submissio
- n deadline. (Abstract)
-URL:https://pasc-conference.org/editions/pasc26/
+ n deadline. Status: expected. Source: https://pasc-conference.org/
+URL:https://pasc-conference.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: PASC Paper Deadline (Abstract)
+DESCRIPTION:Reminder: PASC Paper Deadline (Abstract) [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:PASC-deadline-20270204@hil-venue-tracker
+UID:pasc-2027-deadline-20270204@hil-venue-tracker
 DTSTART;VALUE=DATE:20270204
 DTEND;VALUE=DATE:20270205
-SUMMARY:PASC Paper Deadline (Full paper)
+SUMMARY:PASC Paper Deadline (Full paper) [EXPECTED]
 DESCRIPTION:Platform for Advanced Scientific Computing Conference submissio
- n deadline. (Full paper)
-URL:https://pasc-conference.org/editions/pasc26/
+ n deadline. Status: expected. Source: https://pasc-conference.org/
+URL:https://pasc-conference.org/
 BEGIN:VALARM
 TRIGGER:-P30D
 ACTION:DISPLAY
-DESCRIPTION:Reminder: PASC Paper Deadline (Full paper)
+DESCRIPTION:Reminder: PASC Paper Deadline (Full paper) [EXPECTED]
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:PASC-conference-20270629@hil-venue-tracker
+UID:pasc-2027-event-20270629@hil-venue-tracker
 DTSTART;VALUE=DATE:20270629
-DTEND;VALUE=DATE:20270630
-SUMMARY:PASC Conference
-DESCRIPTION:Platform for Advanced Scientific Computing Conference.
-URL:https://pasc-conference.org/editions/pasc26/
+DTEND;VALUE=DATE:20270702
+SUMMARY:PASC Conference [EXPECTED]
+DESCRIPTION:Platform for Advanced Scientific Computing Conference. Status: 
+ expected. Source: https://pasc-conference.org/
+URL:https://pasc-conference.org/
 END:VEVENT
 END:VCALENDAR
