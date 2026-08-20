@@ -20,7 +20,7 @@ class TrackerDataTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertGreater(len(warnings), 0)
         self.assertEqual(venue_count, 36)
-        self.assertEqual(event_count, 47)
+        self.assertEqual(event_count, 48)
 
     def test_default_scope_and_journal_model(self):
         core = load_venues(VENUES, EVENTS)

@@ -130,7 +130,9 @@ All dates migrated from the old base-year tracker are currently marked `expected
 
 ## Current venue set
 
-**Core:** SC, IPDPS, PPoPP, ASPLOS, HPCA, TACO, TPDS, HPDC, ICS, ICDCS, USENIX ATC, SIGMETRICS, PASC.
+The default `conference_timeline.png` uses `--scope core`: it is the lab-curated shortlist of recurring venues with the strongest general fit for HIL research. `core` describes lab relevance, not conference quality or an external rank. Core journals remain in the data and reports but do not appear in the timeline because they have no conference date.
+
+**Core:** SC, IPDPS, PPoPP, ASPLOS, HPCA, TACO, TPDS, HPDC, ICS, ICDCS, SIGOPS ATC, SIGMETRICS, PASC.
 
 **Adjacent:** SIGMOD, VLDB, MSST, ICPP, ICDE, DRBSD, CLUSTER, HiPC, IEEE BigData, IWBDR.
 

@@ -1,26 +1,28 @@
 venue,edition,event_type,start_date,end_date,deadline_time,timezone,status,location,source_url,verified_on,notes
-SC,2027,conference,2027-11-15,,,,expected,,https://supercomputing.org/,,Date carried forward from the previous tracker; verify for SC27
-SC,2027,deadline,2027-04-08,,,,expected,,https://supercomputing.org/,,Date carried forward from the previous tracker; verify for SC27
-IPDPS,2027,conference,2027-05-25,,,,expected,,https://www.ipdps.org/,,Date carried forward from the previous tracker; verify for IPDPS 2027
-IPDPS,2027,deadline,2026-10-09,,,,expected,,https://www.ipdps.org/,,Date carried forward from the previous tracker; verify for IPDPS 2027
-PPoPP,2027,conference,2027-01-25,,,,expected,,https://ppopp-conference.org/,,Date carried forward from the previous tracker; verify for PPoPP 2027
-PPoPP,2027,deadline,2026-09-01,,,,expected,,https://ppopp-conference.org/,,Date carried forward from the previous tracker; verify for PPoPP 2027
-ASPLOS,2027,conference,2027-04-11,,,,expected,,https://www.asplos-conference.org/,,Date carried forward from the previous tracker; verify for ASPLOS 2027
-ASPLOS,2027,deadline,2026-04-15,,,,expected,,https://www.asplos-conference.org/,,April cycle; verify for ASPLOS 2027
-ASPLOS,2027,deadline,2026-09-09,,,,expected,,https://www.asplos-conference.org/,,September cycle; verify for ASPLOS 2027
-HPCA,2027,conference,2027-03-07,,,,expected,,https://hpca-conf.org/,,Approximate date; verify for HPCA 2027
-HPCA,2027,deadline,2026-08-09,,,,expected,,https://hpca-conf.org/,,Approximate date; verify for HPCA 2027
-HPDC,2027,conference,2027-07-15,,,,expected,,https://www.hpdc.org/,,Date carried forward from the previous tracker; verify for HPDC 2027
-HPDC,2027,deadline,2027-02-05,,,,expected,,https://www.hpdc.org/,,Date carried forward from the previous tracker; verify for HPDC 2027
-ICS,2027,conference,2027-07-15,,,,expected,,https://www.ics-conference.org/,,Date carried forward from the previous tracker; verify for ICS 2027
-ICS,2027,deadline,2026-12-16,,,,expected,,https://www.ics-conference.org/,,Cycle 1; verify for ICS 2027
-ICS,2027,deadline,2027-02-09,,,,expected,,https://www.ics-conference.org/,,Cycle 2; verify for ICS 2027
-ICDCS,2027,conference,2027-06-15,,,,expected,,https://icdcs.org/,,Date carried forward from the previous tracker; verify for ICDCS 2027
-ICDCS,2027,deadline,2027-01-21,,,,expected,,https://icdcs.org/,,Date carried forward from the previous tracker; verify for ICDCS 2027
-USENIX ATC,2027,conference,2027-07-14,,,,expected,,https://www.usenix.org/conferences/byname/131,,Approximate date; verify venue naming and 2027 cycle
-USENIX ATC,2027,deadline,2027-01-15,,,,expected,,https://www.usenix.org/conferences/byname/131,,Approximate date; verify venue naming and 2027 cycle
-SIGMETRICS,2027,conference,2027-06-09,,,,expected,,https://www.sigmetrics.org/,,Approximate date; verify for SIGMETRICS 2027
-SIGMETRICS,2027,deadline,2026-10-15,,,,expected,,https://www.sigmetrics.org/,,Approximate date; verify for SIGMETRICS 2027
+SC,2027,conference,2027-11-14,2027-11-19,,,expected,,https://supercomputing.org/,2026-08-20,Projected conference week; the official SC27 site and dates are not published
+SC,2027,deadline,2027-04-08,,23:59,AoE,expected,,https://sc26.supercomputing.org/all-dates-deadlines/,2026-08-20,Projected from the SC26 paper cycle; the SC27 paper deadline is not published
+IPDPS,2027,conference,2027-06-01,2027-06-05,,,confirmed,"Seattle, Washington, USA",https://www.ipdps.org/ipdps2027/2027-call-for-papers.html,2026-08-20,
+IPDPS,2027,deadline,2026-10-08,,23:59,AoE,confirmed,,https://www.ipdps.org/ipdps2027/2027-call-for-papers.html,2026-08-20,Full manuscript; mandatory abstract registration due October 1
+PPoPP,2027,conference,2027-03-20,2027-03-24,,,confirmed,"Salt Lake City, Utah, USA",https://ppopp27.sigplan.org/,2026-08-20,Co-located with HPCA CGO and CC
+PPoPP,2027,deadline,2026-08-03,,23:59,AoE,confirmed,,https://conf.researchr.org/track/PPoPP-2027/PPoPP-2027-papers,2026-08-20,Full paper
+ASPLOS,2027,conference,2027-04-11,2027-04-15,,,confirmed,"Heraklion, Crete, Greece",https://www.asplos-conference.org/asplos2027/cfp/,2026-08-20,
+ASPLOS,2027,deadline,2026-04-15,,23:59,AoE,confirmed,,https://www.asplos-conference.org/asplos2027/cfp/,2026-08-20,April cycle full paper
+ASPLOS,2027,deadline,2026-09-09,,23:59,AoE,confirmed,,https://www.asplos-conference.org/asplos2027/cfp/,2026-08-20,September cycle full paper
+HPCA,2027,conference,2027-03-20,2027-03-24,,,confirmed,"Salt Lake City, Utah, USA",https://conf.researchr.org/home/hpca-2027,2026-08-20,Co-located with PPoPP CGO and CC
+HPCA,2027,deadline,2026-07-31,,23:59,AoE,confirmed,,https://conf.researchr.org/track/hpca-2027/hpca-2027-main-conference,2026-08-20,Main-track paper; registration and abstract due July 24
+HPDC,2027,conference,2027-07-15,,,,expected,,https://www.hpdc.org/,2026-08-20,Projection retained for planning; the official HPDC 2027 edition is not announced
+HPDC,2027,deadline,2027-02-05,,,,expected,,https://www.hpdc.org/,2026-08-20,Projection retained for planning; the official HPDC 2027 CFP is not announced
+ICS,2027,conference,2027-06-05,2027-06-11,,,expected,"Atlanta, Georgia, USA",https://www.ics-conference.org/,2026-08-20,FCRC week and Atlanta are announced; ICS-specific session dates remain TBA
+ICS,2027,deadline,2026-12-16,,,,expected,,https://www.ics-conference.org/,2026-08-20,Projected cycle 1; the official ICS 2027 CFP is not published
+ICS,2027,deadline,2027-02-09,,,,expected,,https://www.ics-conference.org/,2026-08-20,Projected cycle 2; the official ICS 2027 CFP is not published
+ICDCS,2027,conference,2027-06-15,,,,expected,,https://icdcs.org/,2026-08-20,Projection retained for planning; the official ICDCS 2027 edition is not announced
+ICDCS,2027,deadline,2027-01-21,,,,expected,,https://icdcs.org/,2026-08-20,Projected from the ICDCS 2026 paper cycle; the ICDCS 2027 CFP is not announced
+SIGOPS ATC,2027,conference,2027-11-15,2027-11-18,,,expected,,https://atc.sigops.org/2026/,2026-08-20,Projected from the inaugural ACM SIGOPS ATC 2026 schedule; ATC 2027 is not announced
+SIGOPS ATC,2027,deadline,2027-06-10,,23:59,,expected,,https://atc.sigops.org/2026/cfp.html,2026-08-20,Projected from the 2026 paper cycle; ATC 2027 CFP is not announced
+SIGMETRICS,2027,conference,2027-06-07,2027-06-11,,,confirmed,"Atlanta, Georgia, USA",https://www.sigmetrics.org/sigmetrics2027/,2026-08-20,Part of ACM FCRC 2027
+SIGMETRICS,2027,deadline,2026-07-10,,23:59,AoE,confirmed,,https://www.sigmetrics.org/sigmetrics2027/,2026-08-20,Summer paper cycle; abstract registration due July 3
+SIGMETRICS,2027,deadline,2026-10-09,,23:59,AoE,confirmed,,https://www.sigmetrics.org/sigmetrics2027/,2026-08-20,Fall paper cycle; abstract registration due October 2
+SIGMETRICS,2027,deadline,2027-01-11,,23:59,AoE,confirmed,,https://www.sigmetrics.org/sigmetrics2027/,2026-08-20,Winter paper cycle; abstract registration due January 4
 SIGMOD,2027,conference,2027-06-15,,,,expected,,https://sigmod.org/,,Date carried forward from the previous tracker; verify for SIGMOD 2027
 SIGMOD,2027,deadline,2026-01-17,,,,expected,,https://sigmod.org/,,Round 1; verify for SIGMOD 2027
 SIGMOD,2027,deadline,2026-04-17,,,,expected,,https://sigmod.org/,,Round 2; verify for SIGMOD 2027
@@ -37,9 +39,8 @@ ICDE,2027,deadline,2026-06-18,,,,expected,,https://ieee-icde.org/,,Round 1; veri
 ICDE,2027,deadline,2026-10-27,,,,expected,,https://ieee-icde.org/,,Round 2; verify for ICDE 2027
 DRBSD,2027,conference,2027-11-15,,,,expected,,https://drbsd.github.io/,,SC workshop date estimate; verify for DRBSD 2027
 DRBSD,2027,deadline,2027-08-15,,,,expected,,https://drbsd.github.io/,,Date carried forward from the previous tracker; verify for DRBSD 2027
-PASC,2027,conference,2027-06-29,2027-07-01,,,expected,,https://pasc-conference.org/,,Date carried forward from PASC26 pattern; verify for PASC27
-PASC,2027,deadline,2026-12-12,,,,expected,,https://pasc-conference.org/,,Abstract; verify for PASC27
-PASC,2027,deadline,2027-02-04,,,,expected,,https://pasc-conference.org/,,Full paper; verify for PASC27
+PASC,2027,conference,2027-06-28,2027-06-30,,,confirmed,"Lugano, Switzerland",https://pasc-conference.org/,2026-08-20,
+PASC,2027,deadline,2026-12-12,,,,expected,,https://pasc-conference.org/,2026-08-20,Projected full-paper deadline from the PASC26 cycle; PASC27 submissions are not announced
 IEEE BigData,2026,deadline,2026-08-21,,,,confirmed,,https://bigdataieee.org/BigData2026/important-dates/,2026-08-20,Full paper
 IEEE BigData,2026,conference,2026-12-14,2026-12-17,,,confirmed,"Phoenix, Arizona, USA",https://bigdataieee.org/BigData2026/,2026-08-20,
 IWBDR,2026,deadline,2026-10-30,,,,expected,,https://mercury-hpg.github.io/IWBDR-6/,2026-08-20,Full paper; date is explicitly tentative
